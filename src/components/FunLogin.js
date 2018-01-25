@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button, Checkbox, Form } from 'semantic-ui-react'
 
 export default class FunLogin extends Component {
   constructor(props) {
@@ -48,20 +49,33 @@ export default class FunLogin extends Component {
   render() {
     if (localStorage.getItem('id') === 'undefined') {
       return(
-        <div className="login-form">
-          <form onSubmit={this.handleSubmit}>
-            Username:
-            <input type="text" value={this.state.username} onChange={this.handleUserNameChange} /><br></br>
-            Password:
-            <input type="password" value={this.state.password} onChange={this.handlePassWordChange} /><br></br>
-            <input type="submit" value="submit" />
-          </form>
+        <div>
+          <Form onSubmit={this.handleSubmit}>
+            <Form.Field>
+              <label>Username</label>
+              <input
+                placeholder='Username'
+                value={this.state.username}
+                onChange={this.handleUserNameChange}
+              />
+            </Form.Field>
+            <Form.Field>
+              <label>Password</label>
+              <input
+                placeholder='Password'
+                type="password"
+                value={this.state.password}
+                onChange={this.handlePassWordChange}
+              />
+            </Form.Field>
+            <Button type='submit'>Submit</Button>
+          </Form>
         </div>
       );
     } else {
       return(
         <div className="login-form">
-          <button onClick={this.logout}>Logout</button>
+          <Button onClick={this.logout}>Logout</Button>
         </div>
       );
     }
