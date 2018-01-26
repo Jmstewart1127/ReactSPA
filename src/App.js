@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { Sidebar, Segment, Button, Menu, MenuItem, Image, Icon, Header } from 'semantic-ui-react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import BusinessTable from "./components/BusinessTable";
-import EmployeeTable from "./components/EmployeeTable";
 import SemanticTable from "./components/SemanticTable";
+import Businesses from "./components/Businesses";
 import Login from "./components/FunLogin";
 
 class App extends Component {
@@ -39,11 +39,10 @@ class App extends Component {
             <Sidebar.Pusher>
               <Segment basic>
                 <Header as='h3'>Application Content</Header>
-                <Image src='/assets/images/wireframe/paragraph.png' />
                 <body>
                   <Route exact path="/" component={Login}/>
                   <Route path="/Employees" component={SemanticTable}/>
-                  <Route path="/Businesses" component={BusinessTable}/>
+                  <Route path="/Businesses" component={Businesses}/>
                 </body>
               </Segment>
             </Sidebar.Pusher>

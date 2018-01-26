@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Checkbox, Icon, Table } from 'semantic-ui-react';
+import { Grid, Button, Loader, Checkbox, Icon, Table } from 'semantic-ui-react';
 import TimeClockSlider from './TimeClockSlider';
 
 class SemanticTable extends Component {
@@ -8,6 +8,7 @@ class SemanticTable extends Component {
     this.state = {
       employeeData: [],
       clockStatus: false,
+      isLoading: true,
     }
   }
 
@@ -17,6 +18,7 @@ class SemanticTable extends Component {
       .then((responseJson) => {
         this.setState({
           employeeData: responseJson,
+          isLoading: false,
         });
       })
       .catch((error) => {
@@ -39,55 +41,66 @@ class SemanticTable extends Component {
   }
 
   render() {
-    return(
-      <Table compact celled definition>
-        <Table.Header>
-          <Table.Row>
-            <Table.HeaderCell><Icon name='wait' size='large' circular={true}/></Table.HeaderCell>
-            <Table.HeaderCell>ID</Table.HeaderCell>
-            <Table.HeaderCell>Name</Table.HeaderCell>
-            <Table.HeaderCell>Registration Date</Table.HeaderCell>
-            <Table.HeaderCell>E-mail address</Table.HeaderCell>
-            <Table.HeaderCell>Premium Plan</Table.HeaderCell>
-          </Table.Row>
-        </Table.Header>
-
-        <Table.Body>
-          { this.state.employeeData.map((employee) => {
-            const handleClockInOut = () => {
-              this.clockEmployeeInOrOut(employee.id);
-            };
-            return(
-              <Table.Row key={employee}>
-                <Table.Cell collapsing>
-                  <TimeClockSlider
-                    isClockedIn={employee.clocked}
-                    handleFunction={handleClockInOut}
-                  />
-                </Table.Cell>
-                <Table.Cell>{employee.id}</Table.Cell>
-                <Table.Cell>{employee.user}</Table.Cell>
-                <Table.Cell>{employee.payRate}</Table.Cell>
-                <Table.Cell>{employee.weeklyPay}</Table.Cell>
-                <Table.Cell>{employee.clocked.toString()}</Table.Cell>
-              </Table.Row>
-            );
-          })}
-        </Table.Body>
-        <Table.Footer fullWidth>
-          <Table.Row>
-            <Table.HeaderCell />
-            <Table.HeaderCell colSpan='4'>
-              <Button floated='right' icon labelPosition='left' primary size='small'>
-                <Icon name='user' /> Add User
-              </Button>
-              <Button size='small'>Approve</Button>
-              <Button disabled size='small'>Approve All</Button>
-            </Table.HeaderCell>
-          </Table.Row>
-        </Table.Footer>
-      </Table>
-    );
+    if (this.state.isLoading) {
+      return(
+        <div className='loader'>
+          <Loader active size='massive' inline='centered'/>
+        </div>
+      );
+    } else {
+      return (
+        <Grid container columns={1}>
+          <Grid.Column>
+            <Table celled>
+              <Table.Header>
+                <Table.Row>
+                  <Table.HeaderCell><Icon name='wait' size='large'/></Table.HeaderCell>
+                  <Table.HeaderCell>ID</Table.HeaderCell>
+                  <Table.HeaderCell>Name</Table.HeaderCell>
+                  <Table.HeaderCell>Rate</Table.HeaderCell>
+                  <Table.HeaderCell>Weekly Pay</Table.HeaderCell>
+                  <Table.HeaderCell>Clocked In</Table.HeaderCell>
+                </Table.Row>
+              </Table.Header>
+              <Table.Body>
+                {this.state.employeeData.map((employee) => {
+                  const handleClockInOut = () => {
+                    this.clockEmployeeInOrOut(employee.id);
+                  };
+                  return (
+                    <Table.Row key={employee}>
+                      <Table.Cell collapsing>
+                        <TimeClockSlider
+                          isClockedIn={employee.clocked}
+                          handleFunction={handleClockInOut}
+                        />
+                      </Table.Cell>
+                      <Table.Cell>{employee.id}</Table.Cell>
+                      <Table.Cell>{employee.user}</Table.Cell>
+                      <Table.Cell>{employee.payRate}</Table.Cell>
+                      <Table.Cell>{Math.round(employee.totalPay * 100) / 100}</Table.Cell>
+                      <Table.Cell>{employee.clocked.toString()}</Table.Cell>
+                    </Table.Row>
+                  );
+                })}
+              </Table.Body>
+              <Table.Footer fullWidth>
+                <Table.Row>
+                  <Table.HeaderCell/>
+                  <Table.HeaderCell colSpan='4'>
+                    <Button floated='right' icon labelPosition='left' primary size='small'>
+                      <Icon name='user'/> Add User
+                    </Button>
+                    <Button size='small'>Approve</Button>
+                    <Button disabled size='small'>Approve All</Button>
+                  </Table.HeaderCell>
+                </Table.Row>
+              </Table.Footer>
+            </Table>
+          </Grid.Column>
+        </Grid>
+      );
+    }
   }
 }
 

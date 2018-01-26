@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Checkbox, Form } from 'semantic-ui-react'
+import { Grid, Button, Checkbox, Form } from 'semantic-ui-react'
 
 export default class FunLogin extends Component {
   constructor(props) {
@@ -50,32 +50,40 @@ export default class FunLogin extends Component {
     if (localStorage.getItem('id') === 'undefined') {
       return(
         <div>
-          <Form onSubmit={this.handleSubmit}>
-            <Form.Field>
-              <label>Username</label>
-              <input
-                placeholder='Username'
-                value={this.state.username}
-                onChange={this.handleUserNameChange}
-              />
-            </Form.Field>
-            <Form.Field>
-              <label>Password</label>
-              <input
-                placeholder='Password'
-                type="password"
-                value={this.state.password}
-                onChange={this.handlePassWordChange}
-              />
-            </Form.Field>
-            <Button type='submit'>Submit</Button>
-          </Form>
+          <Grid container centered columns={3}>
+            <Grid.Column>
+              <Form className='login-form' onSubmit={this.handleSubmit}>
+                <Form.Field>
+                  <label>Username</label>
+                  <input
+                    placeholder='Username'
+                    value={this.state.username}
+                    onChange={this.handleUserNameChange}
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Password</label>
+                  <input
+                    placeholder='Password'
+                    type="password"
+                    value={this.state.password}
+                    onChange={this.handlePassWordChange}
+                  />
+                </Form.Field>
+                <Button className='login-submit-button' type='submit'>Submit</Button>
+              </Form>
+            </Grid.Column>
+          </Grid>
         </div>
       );
     } else {
       return(
         <div className="login-form">
-          <Button onClick={this.logout}>Logout</Button>
+          <Grid container columns={1}>
+            <Grid.Column>
+              <Button onClick={this.logout}>Logout</Button>
+            </Grid.Column>
+          </Grid>
         </div>
       );
     }

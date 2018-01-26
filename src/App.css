@@ -39,10 +39,6 @@
   margin-right: auto;
 }
 
-.login-form {
-  display: block;
-}
-
 .clock-in-out-button:hover {
   background-color: dodgerblue;
   border-radius: 4px;
@@ -53,6 +49,11 @@
 
 .menu-items {
   text-align: left;
+}
+
+.loader {
+  padding: 40px 0;
+  overflow-y: none;
 }
 
 @keyframes App-logo-spin {

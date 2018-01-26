@@ -23,7 +23,6 @@ const Nav = () => (
         </ListItem>
       </List>
       <hr/>
-
       <Route exact path="/" component={Home}/>
       <Route path="/Employees" component={EmployeeTable}/>
       <Route path="/Businesses" component={BusinessTable}/>

@@ -12,3 +12,9 @@ body {
 .main-content {
   height: 100%;
 }
+
+.login-submit-button {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: flex !important;
+}
