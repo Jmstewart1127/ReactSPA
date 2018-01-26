@@ -26,7 +26,9 @@ class Businesses extends Component {
   };
 
   componentDidMount() {
-    this.setBusinessData();
+    if (localStorage.getItem('id') !== 'undefined') {
+      this.setBusinessData();
+    }
   }
 
   render() {

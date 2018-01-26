@@ -91,8 +91,6 @@ class SemanticTable extends Component {
                     <Button floated='right' icon labelPosition='left' primary size='small'>
                       <Icon name='user'/> Add User
                     </Button>
-                    <Button size='small'>Approve</Button>
-                    <Button disabled size='small'>Approve All</Button>
                   </Table.HeaderCell>
                 </Table.Row>
               </Table.Footer>
