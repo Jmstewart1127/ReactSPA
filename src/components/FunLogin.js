@@ -79,9 +79,9 @@ export default class FunLogin extends Component {
     } else {
       return(
         <div className="login-form">
-          <Grid container columns={1}>
+          <Grid centered columns={2}>
             <Grid.Column>
-              <Button onClick={this.logout}>Logout</Button>
+              <Button onClick={this.logout} inline="centered">Logout</Button>
             </Grid.Column>
           </Grid>
         </div>

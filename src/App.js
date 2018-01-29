@@ -5,14 +5,18 @@ import BusinessTable from "./components/BusinessTable";
 import SemanticTable from "./components/SemanticTable";
 import Businesses from "./components/Businesses";
 import Login from "./components/FunLogin";
+import Logout from "./components/Logout";
 
 class App extends Component {
   state = { visible: false };
 
   toggleVisibility = () => this.setState({ visible: !this.state.visible });
 
+  logout = () => { localStorage.setItem('id', 'undefined') };
+
   render() {
     const { visible } = this.state;
+    const handleLogout = () => { this.logout() };
     return (
       <Router>
         <div className="main-content">
@@ -20,25 +24,33 @@ class App extends Component {
             <Menu.Item onClick={this.toggleVisibility}>
               <Icon name='list' />
             </Menu.Item>
+              <Logout
+                logoutFunction={handleLogout}
+              />
           </Menu>
           <Sidebar.Pushable as={Segment}>
-            <Sidebar as={Menu} animation='push' width='thin' visible={visible} icon='labeled' vertical inverted>
+            <Sidebar as={Menu} animation='overlay' width='thin' visible={visible} icon='labeled' vertical inverted>
               <Menu.Item name='home'>
-                <Icon name='home' />
-                <Link to="/">Home</Link>
+                <Link to="/">
+                  <Icon name='home' />
+                  Home
+                </Link>
               </Menu.Item>
               <Menu.Item name='university'>
-                <Icon name='university' />
-                <Link to="/Businesses">Businesses</Link>
+                <Link to="/Businesses">
+                  <Icon name='university' link="/Businesses" />
+                  Businesses
+                </Link>
               </Menu.Item>
               <Menu.Item name='users'>
-                <Icon name='users' />
-                <Link to="/Employees">Employees</Link>
+                <Link to="/Employees">
+                  <Icon name='users' />
+                  Employees
+                </Link>
               </Menu.Item>
             </Sidebar>
             <Sidebar.Pusher>
               <Segment basic>
-                <Header as='h3'>Application Content</Header>
                 <body>
                   <Route exact path="/" component={Login}/>
                   <Route path="/Employees" component={SemanticTable}/>
