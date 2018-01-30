@@ -8,24 +8,26 @@ export default class Logout extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loggedIn: false,
+      loggedIn: null,
     }
   }
 
-  logout = () => {
-    localStorage.setItem('id', 'undefined');
-    this.setState({ loggedIn: false });
-  };
+  componentWillReceiveProps(newProps) {
+    if (this.props.loggedIn !== newProps.loggedIn) {
+      this.setState({ loggedIn: true });
+    }
+  }
 
   render() {
-    const logoutFunction = () => {
-      this.logout();
-    };
+    const logoutFunction = this.props;
     const loginFunction = this.props;
-    if (localStorage.getItem('id') !== 'undefined' && !this.state.loggedIn) {
+    const loggedIn = this.props;
+    if (localStorage.getItem('id') !== 'undefined') {
       return(
-        <MenuItem position="right" onClick={logoutFunction}>
-          <Icon name='sign out' />Logout
+        <MenuItem position="right" onClick={this.props.logoutFunction}>
+          <Link to="/">
+            <Icon name='sign out' />Logout
+          </Link>
         </MenuItem>
       );
     } else {

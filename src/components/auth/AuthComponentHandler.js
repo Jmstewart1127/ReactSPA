@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Button, Checkbox, Form } from 'semantic-ui-react'
 
-export default class FunLogin extends Component {
+export default class AuthComponentHandler extends Component {
   constructor(props) {
     super(props);
 
@@ -43,7 +43,6 @@ export default class FunLogin extends Component {
   };
 
   render() {
-    const loggedIn = this.props;
     if (localStorage.getItem('id') === 'undefined') {
       return(
         <div>

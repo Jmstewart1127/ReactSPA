@@ -10,25 +10,37 @@ import Logout from "./components/auth/Logout";
 class App extends Component {
   state = {
     visible: false,
-    loggedIn: null,
+    loggedIn: false,
   };
 
   toggleVisibility = () => this.setState({ visible: !this.state.visible });
 
   logout = () => {
     localStorage.setItem('id', 'undefined');
-    this.setState({ loggedIn: false });
   };
 
   login = () => {
-    this.setState({ loggedIn: true });
     return(<Link to="/"/>);
   };
+
+  isLoggedIn = () => {
+    if (localStorage.getItem('id') === 'undefined') {
+      this.setState({ loggedIn: false });
+    } else {
+      this.setState({ loggedIn: true });
+    }
+  };
+
+  componentDidMount() {
+    this.isLoggedIn();
+    console.log(this.state.loggedIn);
+  }
 
   render() {
     const { visible } = this.state;
     const handleLogout = () => { this.logout() };
     const handleLogin = () => { this.login() };
+    const checkLoggedIn = this.state.loggedIn;
     return (
       <Router>
         <div className="main-content">
@@ -39,6 +51,7 @@ class App extends Component {
               <Logout
                 logoutFunction={handleLogout}
                 loginFunction={handleLogin}
+                loggedIn={checkLoggedIn}
               />
           </Menu>
           <Sidebar.Pushable as={Segment}>
@@ -65,7 +78,7 @@ class App extends Component {
             <Sidebar.Pusher>
               <Segment basic>
                 <body>
-                  <Route exact path="/" component={Login}/>
+                  <Route exact path="/" component={Login} loggedIn={this.state.loggedIn}/>
                   <Route path="/Employees" component={SemanticTable}/>
                   <Route path="/Businesses" component={Businesses}/>
                 </body>
