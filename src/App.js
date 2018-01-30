@@ -1,22 +1,34 @@
 import React, { Component } from 'react'
 import { Sidebar, Segment, Button, Menu, MenuItem, Image, Icon, Header } from 'semantic-ui-react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import BusinessTable from "./components/BusinessTable";
-import SemanticTable from "./components/SemanticTable";
-import Businesses from "./components/Businesses";
-import Login from "./components/FunLogin";
-import Logout from "./components/Logout";
+import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
+import BusinessTable from "./components/business/BusinessTable";
+import SemanticTable from "./components/employee/SemanticTable";
+import Businesses from "./components/business/Businesses";
+import Login from "./components/auth/Login";
+import Logout from "./components/auth/Logout";
 
 class App extends Component {
-  state = { visible: false };
+  state = {
+    visible: false,
+    loggedIn: null,
+  };
 
   toggleVisibility = () => this.setState({ visible: !this.state.visible });
 
-  logout = () => { localStorage.setItem('id', 'undefined') };
+  logout = () => {
+    localStorage.setItem('id', 'undefined');
+    this.setState({ loggedIn: false });
+  };
+
+  login = () => {
+    this.setState({ loggedIn: true });
+    return(<Link to="/"/>);
+  };
 
   render() {
     const { visible } = this.state;
     const handleLogout = () => { this.logout() };
+    const handleLogin = () => { this.login() };
     return (
       <Router>
         <div className="main-content">
@@ -26,6 +38,7 @@ class App extends Component {
             </Menu.Item>
               <Logout
                 logoutFunction={handleLogout}
+                loginFunction={handleLogin}
               />
           </Menu>
           <Sidebar.Pushable as={Segment}>

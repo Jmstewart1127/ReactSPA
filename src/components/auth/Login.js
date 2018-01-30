@@ -18,6 +18,7 @@ export default class FunLogin extends Component {
       .then((response) => response.json())
       .then((responseJson) => {
         localStorage.setItem('id', responseJson.id);
+        this.setState({ loggedIn: true });
       })
       .catch((error) => {
         console.error(error);
@@ -39,11 +40,6 @@ export default class FunLogin extends Component {
     this.setState({
       loggedIn: true,
     })
-  };
-
-  logout = () => {
-    localStorage.setItem('id', 'undefined');
-    this.setState({ loggedIn: false });
   };
 
   render() {
@@ -81,7 +77,7 @@ export default class FunLogin extends Component {
         <div className="login-form">
           <Grid centered columns={2}>
             <Grid.Column>
-              <Button onClick={this.logout} inline="centered">Logout</Button>
+              <h3>Welcome!</h3>
             </Grid.Column>
           </Grid>
         </div>

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Sidebar, Segment, Button, Menu, Image, Icon, Header } from 'semantic-ui-react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import BusinessTable from "./BusinessTable";
-import EmployeeTable from "./EmployeeTable";
-import Login from "./FunLogin";
+import BusinessTable from "../business/BusinessTable";
+import EmployeeTable from "../employee/EmployeeTable";
+import Login from "../auth/Login";
 
 class SideBarLeft extends Component {
   state = { visible: false };

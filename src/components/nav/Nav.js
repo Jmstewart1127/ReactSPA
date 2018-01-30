@@ -5,8 +5,8 @@ import {
   Link
 } from 'react-router-dom';
 import { List, ListItem } from 'react-md/lib/Lists';
-import EmployeeTable from './EmployeeTable';
-import BusinessTable from './BusinessTable';
+import EmployeeTable from '../employee/EmployeeTable';
+import BusinessTable from '../business/BusinessTable';
 
 const Nav = () => (
   <Router>

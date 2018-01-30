@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Grid, Button, Loader, Checkbox, Icon, Table } from 'semantic-ui-react';
-import TimeClockSlider from './TimeClockSlider';
+import TimeClockSlider from '../misc/TimeClockSlider';
 
 class SemanticTable extends Component {
   constructor(props) {
