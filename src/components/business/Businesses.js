@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
 import { Grid, Button, Loader, Icon, Table } from 'semantic-ui-react';
 
 class Businesses extends Component {
@@ -47,6 +48,7 @@ class Businesses extends Component {
                 <Table.Row>
                   <Table.HeaderCell>ID</Table.HeaderCell>
                   <Table.HeaderCell>Business Name</Table.HeaderCell>
+                  <Table.HeaderCell>View Business</Table.HeaderCell>
                 </Table.Row>
               </Table.Header>
               <Table.Body>
@@ -55,6 +57,11 @@ class Businesses extends Component {
                     <Table.Row key={business}>
                       <Table.Cell>{business.id}</Table.Cell>
                       <Table.Cell>{business.bizName}</Table.Cell>
+                        <Link to={`/Business/${business.id}`}>
+                          <Button
+                            label="View Business"
+                          />
+                        </Link>
                     </Table.Row>
                   );
                 })}

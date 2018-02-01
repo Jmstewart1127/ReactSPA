@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom
 import BusinessTable from "./components/business/BusinessTable";
 import SemanticTable from "./components/employee/SemanticTable";
 import Businesses from "./components/business/Businesses";
+import BusinessById from "./components/business/BusinessById";
 import Login from "./components/auth/Login";
 import Logout from "./components/auth/Logout";
 
@@ -48,11 +49,11 @@ class App extends Component {
             <Menu.Item onClick={this.toggleVisibility}>
               <Icon name='list' />
             </Menu.Item>
-              <Logout
-                logoutFunction={handleLogout}
-                loginFunction={handleLogin}
-                loggedIn={checkLoggedIn}
-              />
+            <Logout
+              logoutFunction={handleLogout}
+              loginFunction={handleLogin}
+              loggedIn={checkLoggedIn}
+            />
           </Menu>
           <Sidebar.Pushable as={Segment}>
             <Sidebar as={Menu} animation='overlay' width='thin' visible={visible} icon='labeled' vertical inverted>
@@ -81,6 +82,7 @@ class App extends Component {
                   <Route exact path="/" component={Login} loggedIn={this.state.loggedIn}/>
                   <Route path="/Employees" component={SemanticTable}/>
                   <Route path="/Businesses" component={Businesses}/>
+                  <Route path="/Business/:id" component={BusinessById}/>
                 </body>
               </Segment>
             </Sidebar.Pusher>
