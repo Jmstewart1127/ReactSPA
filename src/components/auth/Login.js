@@ -76,10 +76,12 @@ export default class FunLogin extends Component {
     } else {
       return(
         <div className="login-form">
-          <Grid centered columns={2}>
-            <Grid.Column>
-              <h3>Welcome!</h3>
-            </Grid.Column>
+          <Grid textAlign='center' columns={1}>
+            <Grid.Row>
+              <Grid.Column>
+                <h3>Welcome!</h3>
+              </Grid.Column>
+            </Grid.Row>
           </Grid>
         </div>
       );
