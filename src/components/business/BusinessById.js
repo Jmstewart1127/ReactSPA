@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Grid, Button, Loader, Icon, Table } from 'semantic-ui-react';
-import MyList from '../list/ListComponent';
+import { Grid, Header, Button, Loader, Icon,  Segment, Table } from 'semantic-ui-react';
+import EmployeeList from '../employee/EmoployeeList';
+import EmployeeSegment from '../employee/EmployeeSegmentList';
 
 class BusinessById extends Component {
   constructor(props) {
@@ -64,12 +65,6 @@ class BusinessById extends Component {
       });
   };
 
-  loadAllData = () => {
-    this.setBusinessData();
-    this.setEmployeeData();
-    this.setJobData();
-  };
-
   componentDidMount() {
     this.setBusinessData();
   }
@@ -83,33 +78,55 @@ class BusinessById extends Component {
       );
     } else {
       return (
-        <Grid container columns={3}>
-          <Grid.Column>
-            {this.state.employeeData.map((business) => {
-              return (
-                <MyList
-                  key={business}
-                  businessId={business.id}
-                  labor={business.user}
-                />
-              );
-            })}
-          </Grid.Column>
-          <Grid.Column>
-
-          </Grid.Column>
-          <Grid.Column>
-            {this.state.employeeData.map((employee) => {
-              return (
-                <MyList
-                  key={employee}
-                  businessName={employee.id}
-                  labor={employee.user}
-                />
-              );
-            })}
-          </Grid.Column>
-        </Grid>
+        <div>
+          <Grid container divided columns={3}>
+            <Grid.Row verticalAlign='top'>
+              <Grid.Column floated='right'>
+                <Header as='h2' className='top-row-header'>
+                  <Icon name='users' size='small'/>
+                  <Header.Content>
+                    Employees
+                  </Header.Content>
+                </Header>
+                {this.state.employeeData.map((employee) => {
+                  return (
+                    <EmployeeSegment
+                      employeeName={employee.user}
+                    />
+                  );
+                })}
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row verticalAlign='middle'>
+              <Grid.Column floated='right'>
+                <Header as='h2'>
+                  <Icon name='cubes' size='small'/>
+                  <Header.Content>
+                    Job Sites
+                  </Header.Content>
+                </Header>
+                {this.state.jobData.map((job) => {
+                  return (
+                    <EmployeeSegment
+                      employeeName={job.jobAddress}
+                    />
+                  );
+                })}
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row verticalAlign='bottom'>
+              <Grid.Column floated='right'>
+                {this.state.employeeData.map((employee) => {
+                  return (
+                    <EmployeeSegment
+                      employeeName={employee.user}
+                    />
+                  );
+                })}
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </div>
       );
     }
   }
