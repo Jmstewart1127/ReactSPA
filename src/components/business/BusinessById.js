@@ -114,17 +114,6 @@ class BusinessById extends Component {
                 })}
               </Grid.Column>
             </Grid.Row>
-            <Grid.Row verticalAlign='bottom'>
-              <Grid.Column floated='right'>
-                {this.state.employeeData.map((employee) => {
-                  return (
-                    <EmployeeSegment
-                      employeeName={employee.user}
-                    />
-                  );
-                })}
-              </Grid.Column>
-            </Grid.Row>
           </Grid>
         </div>
       );
