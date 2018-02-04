@@ -7,7 +7,7 @@ class BusinessById extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      businessId: props.match.params.id,
+      employeeId: props.match.params.id,
       businessData: [],
       employeeData: [],
       jobData: [],
@@ -32,8 +32,8 @@ class BusinessById extends Component {
   };
 
   setEmployeeData = () => {
-    let id = this.state.businessId;
-    fetch('https://spring-clock.herokuapp.com/rest/employees/' + id)
+    let id = this.state.employeeId;
+    fetch('https://spring-clock.herokuapp.com/rest/employee/' + id)
       .then((response) => response.json())
       .then((responseJson) => {
         this.setState({
@@ -48,8 +48,8 @@ class BusinessById extends Component {
   };
 
   setJobData = () => {
-    let id = this.state.businessId;
-    fetch('https://spring-clock.herokuapp.com/rest/jobs/all/' + id)
+    let id = this.state.employeeId;
+    fetch('https://spring-clock.herokuapp.com/rest/jobs/assigned/employee/' + id)
       .then((response) => response.json())
       .then((responseJson) => {
         this.setState({
@@ -86,13 +86,13 @@ class BusinessById extends Component {
                   <Header as='h2' className='main-widget-header'>
                     <Icon name='university' size='small'/>
                     <Header.Content>
-                      {this.state.businessData.bizName}
+                      {this.state.employeeData.user}
                     </Header.Content>
                   </Header>
                   <Segment>
-                    Total Labor Cost: {this.state.businessData.ytdLaborCost}
+                    Total Labor Cost: {this.state.employeeData.payRate}
                     <Divider hidden/>
-                    Total Material Cost: {this.state.businessData.ytdMaterialCost}
+                    Total Material Cost: {this.state.employeeData.weeklyPay}
                   </Segment>
                 </Segment.Group>
               </Grid.Column>
@@ -107,7 +107,6 @@ class BusinessById extends Component {
                   {this.state.employeeData.map((employee) => {
                     return (
                       <EmployeeSegment
-                        id={employee.id}
                         employeeName={employee.user}
                       />
                     );

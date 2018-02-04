@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import { Divider, Grid, Header, Button, Loader, Icon,  Segment, Table } from 'semantic-ui-react';
 import EmployeeSegment from '../employee/EmployeeSegmentList';
-import JobSegment from '../job/JobSegmentList';
 
-class BusinessById extends Component {
+class JobById extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      businessId: props.match.params.id,
+      jobId: props.match.params.id,
       businessData: [],
       employeeData: [],
       jobData: [],
@@ -16,7 +15,7 @@ class BusinessById extends Component {
   }
 
   setBusinessData = () => {
-    let id = this.state.businessId;
+    let id = this.state.jobData.bizId;
     fetch('https://spring-clock.herokuapp.com/rest/business/' + id)
       .then((response) => response.json())
       .then((responseJson) => {
@@ -32,8 +31,8 @@ class BusinessById extends Component {
   };
 
   setEmployeeData = () => {
-    let id = this.state.businessId;
-    fetch('https://spring-clock.herokuapp.com/rest/employees/' + id)
+    let id = this.state.jobId;
+    fetch('https://spring-clock.herokuapp.com/rest/jobs/assigned/employees/' + id)
       .then((response) => response.json())
       .then((responseJson) => {
         this.setState({
@@ -48,8 +47,8 @@ class BusinessById extends Component {
   };
 
   setJobData = () => {
-    let id = this.state.businessId;
-    fetch('https://spring-clock.herokuapp.com/rest/jobs/all/' + id)
+    let id = this.state.jobId;
+    fetch('https://spring-clock.herokuapp.com/rest/get/job/' + id)
       .then((response) => response.json())
       .then((responseJson) => {
         this.setState({
@@ -86,13 +85,13 @@ class BusinessById extends Component {
                   <Header as='h2' className='main-widget-header'>
                     <Icon name='university' size='small'/>
                     <Header.Content>
-                      {this.state.businessData.bizName}
+                      {this.state.employeeData.user}
                     </Header.Content>
                   </Header>
                   <Segment>
-                    Total Labor Cost: {this.state.businessData.ytdLaborCost}
+                    Total Labor Cost: {this.state.employeeData.payRate}
                     <Divider hidden/>
-                    Total Material Cost: {this.state.businessData.ytdMaterialCost}
+                    Total Material Cost: {this.state.employeeData.weeklyPay}
                   </Segment>
                 </Segment.Group>
               </Grid.Column>
@@ -122,9 +121,8 @@ class BusinessById extends Component {
                   </Header>
                   {this.state.jobData.map((job) => {
                     return (
-                      <JobSegment
-                        id={job.id}
-                        address={job.jobAddress}
+                      <EmployeeSegment
+                        employeeName={job.jobAddress}
                       />
                     );
                   })}
@@ -138,4 +136,4 @@ class BusinessById extends Component {
   }
 }
 
-export default BusinessById
+export default JobById

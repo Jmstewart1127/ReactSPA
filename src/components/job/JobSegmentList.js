@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import { Button, Segment, List, Transition } from 'semantic-ui-react'
 
-class EmployeeSegmentList extends Component {
+class JobSegmentList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,9 +14,9 @@ class EmployeeSegmentList extends Component {
   render() {
     return(
       <div>
-        <Link to={`/Employee/${this.props.id}`}>
+        <Link to={`/Job/${this.props.id}`}>
           <Segment className='segment-box'>
-            {this.props.employeeName}
+            {this.props.address}
           </Segment>
         </Link>
       </div>
@@ -24,4 +24,4 @@ class EmployeeSegmentList extends Component {
   }
 }
 
-export default EmployeeSegmentList
+export default JobSegmentList

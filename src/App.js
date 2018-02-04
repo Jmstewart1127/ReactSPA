@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { Sidebar, Segment, Button, Menu, MenuItem, Image, Icon, Header } from 'semantic-ui-react'
 import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
-import BusinessTable from "./components/business/BusinessTable";
 import SemanticTable from "./components/employee/SemanticTable";
 import Businesses from "./components/business/Businesses";
 import BusinessById from "./components/business/BusinessById";
+import EmployeeById from "./components/employee/EmployeeById";
+import JobById from "./components/job/JobById";
 import Login from "./components/auth/Login";
 import Logout from "./components/auth/Logout";
 
@@ -81,8 +82,10 @@ class App extends Component {
                 <body>
                   <Route exact path="/" component={Login} loggedIn={this.state.loggedIn}/>
                   <Route path="/Employees" component={SemanticTable}/>
+                  <Route path="/Employee/:id" component={EmployeeById}/>
                   <Route path="/Businesses" component={Businesses}/>
                   <Route path="/Business/:id" component={BusinessById}/>
+                  <Route path="/Job/:id" component={JobById}/>
                 </body>
               </Segment>
             </Sidebar.Pusher>
