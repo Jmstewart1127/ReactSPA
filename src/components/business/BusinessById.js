@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grid, Header, Button, Loader, Icon,  Segment, Table } from 'semantic-ui-react';
+import { Divider, Grid, Header, Button, Loader, Icon,  Segment, Table } from 'semantic-ui-react';
 import EmployeeList from '../employee/EmoployeeList';
 import EmployeeSegment from '../employee/EmployeeSegmentList';
 
@@ -79,39 +79,54 @@ class BusinessById extends Component {
     } else {
       return (
         <div>
-          <Grid container divided columns={3}>
-            <Grid.Row verticalAlign='top'>
-              <Grid.Column floated='right'>
-                <Header as='h2' className='top-row-header'>
-                  <Icon name='users' size='small'/>
-                  <Header.Content>
-                    Employees
-                  </Header.Content>
-                </Header>
-                {this.state.employeeData.map((employee) => {
-                  return (
-                    <EmployeeSegment
-                      employeeName={employee.user}
-                    />
-                  );
-                })}
+          <Grid container divided columns='equal'>
+            <Grid.Row stretched>
+              <Grid.Column width={11}>
+                <Segment.Group className='widget'>
+                  <Header as='h2' className='main-widget-header'>
+                    <Icon name='university' size='small'/>
+                    <Header.Content>
+                      {this.state.businessData.bizName}
+                    </Header.Content>
+                  </Header>
+                  <Segment>
+                    Total Labor Cost: {this.state.businessData.ytdLaborCost}
+                    <Divider hidden/>
+                    Total Material Cost: {this.state.businessData.ytdMaterialCost}
+                  </Segment>
+                </Segment.Group>
               </Grid.Column>
-            </Grid.Row>
-            <Grid.Row verticalAlign='middle'>
-              <Grid.Column floated='right'>
-                <Header as='h2'>
-                  <Icon name='cubes' size='small'/>
-                  <Header.Content>
-                    Job Sites
-                  </Header.Content>
-                </Header>
-                {this.state.jobData.map((job) => {
-                  return (
-                    <EmployeeSegment
-                      employeeName={job.jobAddress}
-                    />
-                  );
-                })}
+              <Grid.Column floated='right' width={5}>
+                <Segment.Group className='widget'>
+                  <Header as='h2' className='widget-header'>
+                    <Icon name='users' size='small'/>
+                    <Header.Content>
+                      Employees
+                    </Header.Content>
+                  </Header>
+                  {this.state.employeeData.map((employee) => {
+                    return (
+                      <EmployeeSegment
+                        employeeName={employee.user}
+                      />
+                    );
+                  })}
+                </Segment.Group>
+                <Segment.Group className='widget'>
+                  <Header as='h2' className='widget-header'>
+                    <Icon name='cubes' size='small'/>
+                    <Header.Content>
+                      Job Sites
+                    </Header.Content>
+                  </Header>
+                  {this.state.jobData.map((job) => {
+                    return (
+                      <EmployeeSegment
+                        employeeName={job.jobAddress}
+                      />
+                    );
+                  })}
+                </Segment.Group>
               </Grid.Column>
             </Grid.Row>
           </Grid>

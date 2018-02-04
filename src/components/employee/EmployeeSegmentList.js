@@ -10,10 +10,6 @@ class EmployeeSegmentList extends Component {
     };
   }
 
-  handleChange = (e, { name, value }) => this.setState({ [name]: value })
-
-  toggleVisibility = () => this.setState({ visible: !this.state.visible })
-
   render() {
     return(
       <div>

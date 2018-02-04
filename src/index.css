@@ -1,9 +1,14 @@
 body {
-  margin: 0;
-  padding: 0;
+  margin: 0 0 1% 0 !important;
+  padding: 0 0 1% 0 !important;
   height: 100%;
   font-family: sans-serif;
   overflow-y: hidden;
+  background-color: #f4f4f4;
+}
+
+#root > div > div.ui.segment.pushable {
+  background-color: #f4f4f4 !important;
 }
 
 #root {
@@ -14,8 +19,12 @@ body {
   height: 100%;
 }
 
-.top-row-header {
-  margin-top: 0 !important;
+.widget-header {
+  padding: 4% 0 0 2% !important;
+}
+
+.main-widget-header {
+  padding: 2% 0 0 2% !important;
 }
 
 .login-submit-button {
@@ -35,4 +44,8 @@ body {
 
 .segment-box:hover {
   animation: pulse 1s;
+}
+
+.widget {
+  background-color: #f4f4f4 !important;
 }
