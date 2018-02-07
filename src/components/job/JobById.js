@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Divider, Grid, Header, Button, Loader, Icon,  Segment, Table } from 'semantic-ui-react';
+import { Divider, Grid, Header, Loader, Icon, Segment } from 'semantic-ui-react';
 import EmployeeSegment from '../employee/EmployeeSegmentList';
+import BusinessSegment from '../business/BusinessSegmentList';
 
 class JobById extends Component {
   constructor(props) {
@@ -57,15 +58,15 @@ class JobById extends Component {
         });
         console.log(this.state.jobData);
       })
+      .then(() => this.setBusinessData())
       .catch((error) => {
         console.error(error);
       });
   };
 
   componentDidMount() {
-    this.setBusinessData();
-    this.setEmployeeData();
     this.setJobData();
+    this.setEmployeeData();
   }
 
   render() {
@@ -83,9 +84,9 @@ class JobById extends Component {
               <Grid.Column width={11}>
                 <Segment.Group className='widget'>
                   <Header as='h2' className='main-widget-header'>
-                    <Icon name='university' size='small'/>
+                    <Icon name='cubes' size='small'/>
                     <Header.Content>
-                      {this.state.employeeData.user}
+                      {this.state.jobData.jobAddress}
                     </Header.Content>
                   </Header>
                   <Segment>
@@ -116,16 +117,13 @@ class JobById extends Component {
                   <Header as='h2' className='widget-header'>
                     <Icon name='cubes' size='small'/>
                     <Header.Content>
-                      Job Sites
+                      Business
                     </Header.Content>
                   </Header>
-                  {this.state.jobData.map((job) => {
-                    return (
-                      <EmployeeSegment
-                        employeeName={job.jobAddress}
-                      />
-                    );
-                  })}
+                  <BusinessSegment
+                    id={this.state.businessData.id}
+                    bizName={this.state.businessData.bizName}
+                  />
                 </Segment.Group>
               </Grid.Column>
             </Grid.Row>

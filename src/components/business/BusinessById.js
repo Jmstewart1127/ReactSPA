@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Divider, Grid, Header, Button, Loader, Icon,  Segment, Table } from 'semantic-ui-react';
+import { Divider, Grid, Header, Loader, Icon,  Segment } from 'semantic-ui-react';
 import EmployeeSegment from '../employee/EmployeeSegmentList';
 import JobSegment from '../job/JobSegmentList';
 
@@ -16,7 +16,7 @@ class BusinessById extends Component {
   }
 
   setBusinessData = () => {
-    let id = this.state.businessId;
+    let id = this.state.bizId;
     fetch('https://spring-clock.herokuapp.com/rest/business/' + id)
       .then((response) => response.json())
       .then((responseJson) => {
