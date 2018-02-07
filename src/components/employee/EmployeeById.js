@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Divider, Grid, Header, Loader, Icon,  Segment } from 'semantic-ui-react';
-import EmployeeSegment from '../employee/EmployeeSegmentList';
+import BusinessSegment from '../business/BusinessSegmentList';
 import JobSegment from '../job/JobSegmentList';
 
 class BusinessById extends Component {
@@ -16,7 +16,7 @@ class BusinessById extends Component {
   }
 
   setBusinessData = () => {
-    let id = this.state.businessId;
+    let id = this.state.employeeData.bizId;
     fetch('https://spring-clock.herokuapp.com/rest/business/' + id)
       .then((response) => response.json())
       .then((responseJson) => {
@@ -42,6 +42,8 @@ class BusinessById extends Component {
         });
         console.log(this.state.employeeData);
       })
+      .then(() => this.setJobData())
+      .then(() => this.setBusinessData())
       .catch((error) => {
         console.error(error);
       });
@@ -64,9 +66,7 @@ class BusinessById extends Component {
   };
 
   componentDidMount() {
-    this.setBusinessData();
     this.setEmployeeData();
-    this.setJobData();
   }
 
   render() {
@@ -84,33 +84,30 @@ class BusinessById extends Component {
               <Grid.Column width={11}>
                 <Segment.Group className='widget'>
                   <Header as='h2' className='main-widget-header'>
-                    <Icon name='university' size='small'/>
+                    <Icon name='user' size='small'/>
                     <Header.Content>
                       {this.state.employeeData.user}
                     </Header.Content>
                   </Header>
                   <Segment>
-                    Total Labor Cost: {this.state.employeeData.payRate}
+                    Pay Rate: ${this.state.employeeData.payRate}
                     <Divider hidden/>
-                    Total Material Cost: {this.state.employeeData.weeklyPay}
+                    Pay For This Period: ${this.state.employeeData.totalPay}
                   </Segment>
                 </Segment.Group>
               </Grid.Column>
               <Grid.Column floated='right' width={5}>
                 <Segment.Group className='widget'>
                   <Header as='h2' className='widget-header'>
-                    <Icon name='users' size='small'/>
+                    <Icon name='university' size='small'/>
                     <Header.Content>
-                      Employees
+                      Employed At
                     </Header.Content>
                   </Header>
-                  {this.state.employeeData.map((employee) => {
-                    return (
-                      <EmployeeSegment
-                        employeeName={employee.user}
-                      />
-                    );
-                  })}
+                  <BusinessSegment
+                    id={this.state.businessData.id}
+                    bizName={this.state.businessData.bizName}
+                  />
                 </Segment.Group>
                 <Segment.Group className='widget'>
                   <Header as='h2' className='widget-header'>

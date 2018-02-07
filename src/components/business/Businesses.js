@@ -46,22 +46,25 @@ class Businesses extends Component {
             <Table celled>
               <Table.Header>
                 <Table.Row>
-                  <Table.HeaderCell>ID</Table.HeaderCell>
+                  <Table.HeaderCell></Table.HeaderCell>
                   <Table.HeaderCell>Business Name</Table.HeaderCell>
-                  <Table.HeaderCell>View Business</Table.HeaderCell>
                 </Table.Row>
               </Table.Header>
               <Table.Body>
                 {this.state.businessData.map((business) => {
                   return (
                     <Table.Row key={business}>
-                      <Table.Cell>{business.id}</Table.Cell>
-                      <Table.Cell>{business.bizName}</Table.Cell>
+                      <Table.Cell collapsing>
                         <Link to={`/Business/${business.id}`}>
-                          <Button
-                            label="View Business"
-                          />
+                        <Button animated floated='right'>
+                          <Button.Content visible>View</Button.Content>
+                          <Button.Content hidden>
+                            <Icon name='search' />
+                          </Button.Content>
+                        </Button>
                         </Link>
+                      </Table.Cell>
+                      <Table.Cell>{business.bizName}</Table.Cell>
                     </Table.Row>
                   );
                 })}

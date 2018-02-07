@@ -16,7 +16,7 @@ class BusinessById extends Component {
   }
 
   setBusinessData = () => {
-    let id = this.state.bizId;
+    let id = this.state.businessId;
     fetch('https://spring-clock.herokuapp.com/rest/business/' + id)
       .then((response) => response.json())
       .then((responseJson) => {

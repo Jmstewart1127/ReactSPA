@@ -7,8 +7,6 @@ class TimeClockSlider extends Component {
   }
 
   render() {
-    const handleFunction = this.props;
-    const isClockedIn = this.props;
     if (this.props.isClockedIn) {
       return(
         <div>
