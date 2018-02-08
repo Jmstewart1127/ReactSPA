@@ -38,6 +38,10 @@ class Businesses extends Component {
       });
   };
 
+  componentWillMount() {
+    this.setBusinessData();
+  }
+
   componentDidMount() {
     if (localStorage.getItem('id') !== 'undefined') {
       this.setBusinessData();
@@ -45,7 +49,7 @@ class Businesses extends Component {
   }
 
   render() {
-    const reload = this.setBusinessData();
+    const reload = () => { this.setBusinessData(); };
     if (this.state.isLoading) {
       return(
         <div className='loader'>
@@ -69,7 +73,7 @@ class Businesses extends Component {
               <Table.Body>
                 {this.state.businessData.map((business) => {
                   return (
-                    <Table.Row key={business}>
+                    <Table.Row key={business.id}>
                       <Table.Cell collapsing>
                         <Link to={`/Business/${business.id}`}>
                         <Button animated floated='right'>
@@ -105,6 +109,7 @@ class Businesses extends Component {
             </Table>
             <NewBusinessForm
               visible={this.state.visible}
+              reloadData={reload}
             />
           </Grid.Column>
         </Grid>

@@ -68,7 +68,7 @@ class SemanticTable extends Component {
                     this.clockEmployeeInOrOut(employee.id);
                   };
                   return (
-                    <Table.Row key={employee}>
+                    <Table.Row key={employee.id}>
                       <Table.Cell collapsing>
                         <TimeClockSlider
                           isClockedIn={employee.clocked}

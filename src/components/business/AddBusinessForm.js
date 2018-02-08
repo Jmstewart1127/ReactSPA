@@ -66,7 +66,7 @@ class AddBusinessForm extends Component {
                   onChange={this.handleChange('businessName')}
                 />
               </Form.Field>
-              <Button type='submit'>Submit</Button>
+              <Button type='submit' onClick={this.props.reloadData}>Submit</Button>
             </Form>
           </Segment>
         </div>
