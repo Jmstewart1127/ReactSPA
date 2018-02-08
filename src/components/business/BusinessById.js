@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { Divider, Grid, Header, Loader, Icon,  Segment } from 'semantic-ui-react';
 import EmployeeSegment from '../employee/EmployeeSegmentList';
 import JobSegment from '../job/JobSegmentList';
+import BusinessHeader from './BusinessHeader';
+import EmployeesHeader from '../employee/EmployeeWidgetHeader';
+import JobsHeader from '../job/JobWidgetHeader';
 
 class BusinessById extends Component {
   constructor(props) {
@@ -83,12 +86,9 @@ class BusinessById extends Component {
             <Grid.Row stretched>
               <Grid.Column width={11}>
                 <Segment.Group className='widget'>
-                  <Header as='h2' className='main-widget-header'>
-                    <Icon name='university' size='small'/>
-                    <Header.Content>
-                      {this.state.businessData.bizName}
-                    </Header.Content>
-                  </Header>
+                  <BusinessHeader
+                    headerTitle={this.state.businessData.bizName}
+                  />
                   <Segment>
                     Total Labor Cost: {this.state.businessData.ytdLaborCost}
                     <Divider hidden/>
@@ -98,12 +98,9 @@ class BusinessById extends Component {
               </Grid.Column>
               <Grid.Column floated='right' width={5}>
                 <Segment.Group className='widget'>
-                  <Header as='h2' className='widget-header'>
-                    <Icon name='users' size='small'/>
-                    <Header.Content>
-                      Employees
-                    </Header.Content>
-                  </Header>
+                  <EmployeesHeader
+                    headerTitle={"Employees"}
+                  />
                   {this.state.employeeData.map((employee) => {
                     return (
                       <EmployeeSegment
@@ -114,12 +111,9 @@ class BusinessById extends Component {
                   })}
                 </Segment.Group>
                 <Segment.Group className='widget'>
-                  <Header as='h2' className='widget-header'>
-                    <Icon name='cubes' size='small'/>
-                    <Header.Content>
-                      Job Sites
-                    </Header.Content>
-                  </Header>
+                  <JobsHeader
+                    headerTitle={"Job Sites"}
+                  />
                   {this.state.jobData.map((job) => {
                     return (
                       <JobSegment

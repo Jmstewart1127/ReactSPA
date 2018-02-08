@@ -1,15 +1,35 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
-import { Grid, Button, Loader, Icon, Table } from 'semantic-ui-react';
+import { Button, Form, Grid, Loader, Icon, Table } from 'semantic-ui-react';
+import NewBusinessForm from './AddBusinessForm';
+import BusinessHeader from './BusinessHeader';
 
 class Businesses extends Component {
   constructor(props) {
     super(props);
     this.state = {
       businessData: [],
+      visible: false,
+      submitted: false,
       isLoading: true,
     }
   }
+
+  toggleVisibility = () => {
+    if (this.state.visible) {
+      this.setState({visible: false});
+    } else {
+      this.setState({visible: true});
+    }
+  };
+
+  toggleSubmit = () => {
+    if (this.state.submitted) {
+      this.setState({submitted: false});
+    } else {
+      this.setState({submitted: true});
+    }
+  };
 
   setBusinessData = () => {
     let id = localStorage.getItem('id');
@@ -43,6 +63,9 @@ class Businesses extends Component {
       return (
         <Grid container columns={1}>
           <Grid.Column>
+            <BusinessHeader
+              headerTitle={"Businesses"}
+            />
             <Table celled>
               <Table.Header>
                 <Table.Row>
@@ -64,7 +87,9 @@ class Businesses extends Component {
                         </Button>
                         </Link>
                       </Table.Cell>
-                      <Table.Cell>{business.bizName}</Table.Cell>
+                      <Table.Cell>
+                        {business.bizName}
+                      </Table.Cell>
                     </Table.Row>
                   );
                 })}
@@ -73,15 +98,22 @@ class Businesses extends Component {
                 <Table.Row>
                   <Table.HeaderCell/>
                   <Table.HeaderCell colSpan='4'>
-                    <Button floated='right' icon labelPosition='left' primary size='small'>
-                      <Icon name='user'/> Add User
+                    <Button
+                      floated='right'
+                      icon labelPosition='left'
+                      primary size='small'
+                      onClick={this.toggleVisibility}
+                    >
+                      <Icon name='university'/> Add Business
                     </Button>
-                    <Button size='small'>Approve</Button>
-                    <Button disabled size='small'>Approve All</Button>
                   </Table.HeaderCell>
                 </Table.Row>
               </Table.Footer>
             </Table>
+            <NewBusinessForm
+              visible={this.state.visible}
+
+            />
           </Grid.Column>
         </Grid>
       );
