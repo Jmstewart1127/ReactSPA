@@ -14,9 +14,15 @@ class AddBusinessForm extends Component {
 
   toggleSubmit = () => {
     if (this.state.submitted) {
-      this.setState({submitted: false});
+      this.setState({
+        submitted: false,
+        businessName: '',
+      });
     } else {
-      this.setState({submitted: true});
+      this.setState({
+        submitted: true,
+        businessName: '',
+      });
     }
   };
 
@@ -60,7 +66,7 @@ class AddBusinessForm extends Component {
                   onChange={this.handleChange('businessName')}
                 />
               </Form.Field>
-              <Button type='submit' onClick={this.props.submit}>Submit</Button>
+              <Button type='submit'>Submit</Button>
             </Form>
           </Segment>
         </div>

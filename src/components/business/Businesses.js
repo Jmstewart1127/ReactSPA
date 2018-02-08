@@ -23,14 +23,6 @@ class Businesses extends Component {
     }
   };
 
-  toggleSubmit = () => {
-    if (this.state.submitted) {
-      this.setState({submitted: false});
-    } else {
-      this.setState({submitted: true});
-    }
-  };
-
   setBusinessData = () => {
     let id = localStorage.getItem('id');
     fetch('https://spring-clock.herokuapp.com/rest/user/' + id + '/businesses')
@@ -53,6 +45,7 @@ class Businesses extends Component {
   }
 
   render() {
+    const reload = this.setBusinessData();
     if (this.state.isLoading) {
       return(
         <div className='loader'>
@@ -112,7 +105,6 @@ class Businesses extends Component {
             </Table>
             <NewBusinessForm
               visible={this.state.visible}
-
             />
           </Grid.Column>
         </Grid>
