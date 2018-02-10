@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15c76d52-e3fa-4992-bd87-804e95bff18d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/components/employee/AddEmployeeForm.js" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/components/business/Businesses.js" afterPath="$PROJECT_DIR$/src/components/business/Businesses.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -110,8 +109,8 @@
       <file leaf-file-name="Businesses.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/business/Businesses.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="944">
-              <caret line="68" column="55" lean-forward="true" selection-start-line="68" selection-start-column="55" selection-end-line="68" selection-end-column="55" />
+            <state relative-caret-position="335">
+              <caret line="51" column="74" lean-forward="false" selection-start-line="51" selection-start-column="74" selection-end-line="51" selection-end-column="74" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -183,9 +182,9 @@
         <option value="$PROJECT_DIR$/src/components/business/BusinessById.js" />
         <option value="$PROJECT_DIR$/src/components/business/BusinessWidgetHeader.js" />
         <option value="$PROJECT_DIR$/src/components/business/AddBusinessForm.js" />
-        <option value="$PROJECT_DIR$/src/components/business/Businesses.js" />
         <option value="$PROJECT_DIR$/src/components/employee/SemanticTable.js" />
         <option value="$PROJECT_DIR$/src/components/employee/AddEmployeeForm.js" />
+        <option value="$PROJECT_DIR$/src/components/business/Businesses.js" />
       </list>
     </option>
   </component>
@@ -475,7 +474,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90551000" />
+    <option name="totallyTimeSpent" value="91613000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1920" height="1050" extended-state="7" />
@@ -894,8 +893,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/business/Businesses.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="944">
-          <caret line="68" column="55" lean-forward="true" selection-start-line="68" selection-start-column="55" selection-end-line="68" selection-end-column="55" />
+        <state relative-caret-position="335">
+          <caret line="51" column="74" lean-forward="false" selection-start-line="51" selection-start-column="74" selection-end-line="51" selection-end-column="74" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>

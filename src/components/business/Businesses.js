@@ -49,7 +49,7 @@ class Businesses extends Component {
   }
 
   render() {
-    const reload = () => { this.setBusinessData(); };
+    const reload = () => { setTimeout(() => { this.setBusinessData(); }, 400); };
     if (this.state.isLoading) {
       return(
         <div className='loader'>
