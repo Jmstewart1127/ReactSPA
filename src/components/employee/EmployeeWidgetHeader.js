@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Header, Icon} from 'semantic-ui-react';
+import { Button, Header, Icon} from 'semantic-ui-react';
 
 class EmployeeWidgetHeader extends Component {
   constructor(props) {
@@ -8,7 +8,7 @@ class EmployeeWidgetHeader extends Component {
 
   render() {
     return(
-      <Header as='h2' className='widget-header'>
+      <Header as='h2' className='employee-widget'>
         <Icon name='users' size='small'/>
         <Header.Content>
           {this.props.headerTitle}

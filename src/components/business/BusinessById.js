@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-import { Divider, Grid, Header, Loader, Icon,  Segment } from 'semantic-ui-react';
+import { Button, Divider, Grid, Header, Loader, Icon,  Segment } from 'semantic-ui-react';
+import AddEmployeeForm from '../employee/AddEmployeeForm';
 import EmployeeSegment from '../employee/EmployeeSegmentList';
 import JobSegment from '../job/JobSegmentList';
 import BusinessHeader from './BusinessHeader';
 import EmployeesHeader from '../employee/EmployeeWidgetHeader';
 import JobsHeader from '../job/JobWidgetHeader';
+import AddJobForm from "../job/AddJobForm";
 
 class BusinessById extends Component {
   constructor(props) {
@@ -15,8 +17,26 @@ class BusinessById extends Component {
       employeeData: [],
       jobData: [],
       isLoading: true,
+      employeeFormVisible: false,
+      jobFormVisible: false,
     }
   }
+
+  toggleEmployeeVisibility = () => {
+    if (this.state.employeeFormVisible) {
+      this.setState({employeeFormVisible: false});
+    } else {
+      this.setState({employeeFormVisible: true});
+    }
+  };
+
+  toggleJobVisibility = () => {
+    if (this.state.jobFormVisible) {
+      this.setState({jobFormVisible: false});
+    } else {
+      this.setState({jobFormVisible: true});
+    }
+  };
 
   setBusinessData = () => {
     let id = this.state.businessId;
@@ -73,6 +93,10 @@ class BusinessById extends Component {
   }
 
   render() {
+    const reloadEmployees = () => { setTimeout(() => { this.setEmployeeData(); }, 400); };
+    const reloadJobs = () => { setTimeout(() => { this.setJobData(); }, 400); };
+    const toggleEmployeeVisibility = () => { this.toggleEmployeeVisibility() };
+    const toggleJobVisibility = () => { this.toggleJobVisibility() };
     if (this.state.isLoading) {
       return (
         <div className='loader'>
@@ -98,6 +122,7 @@ class BusinessById extends Component {
               </Grid.Column>
               <Grid.Column floated='right' width={5}>
                 <Segment.Group className='widget'>
+                  <Button icon='add user' floated='right' onClick={toggleEmployeeVisibility} size='large'/>
                   <EmployeesHeader
                     headerTitle={"Employees"}
                   />
@@ -109,8 +134,14 @@ class BusinessById extends Component {
                       />
                     );
                   })}
+                  <AddEmployeeForm
+                    bizId={this.state.businessId}
+                    visible={this.state.employeeFormVisible}
+                    reloadData={reloadEmployees}
+                  />
                 </Segment.Group>
                 <Segment.Group className='widget'>
+                  <Button icon='add cubes' floated='right' onClick={toggleJobVisibility} size='large'/>
                   <JobsHeader
                     headerTitle={"Job Sites"}
                   />
@@ -122,6 +153,11 @@ class BusinessById extends Component {
                       />
                     );
                   })}
+                  <AddJobForm
+                    bizId={this.state.bizId}
+                    visible={this.state.jobFormVisible}
+                    reloadData={reloadJobs}
+                  />
                 </Segment.Group>
               </Grid.Column>
             </Grid.Row>

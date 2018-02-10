@@ -46,6 +46,16 @@ body {
   animation: pulse 1s;
 }
 
+.employee-widget {
+  margin: 0 !important;
+  padding: 8px 4px 4px 4px !important;
+}
+
+.job-widget {
+  margin: 0 !important;
+  padding: 8px 4px 4px 4px !important;
+}
+
 .widget {
   background-color: #f4f4f4 !important;
 }
