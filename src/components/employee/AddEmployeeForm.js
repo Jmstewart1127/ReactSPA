@@ -77,7 +77,7 @@ class AddEmployeeForm extends Component {
                   onChange={this.handleChange('payRate')}
                 />
               </Form.Field>
-              <Button type='submit' onClick={this.props.reloadData}>Submit</Button>
+              <Button type='submit' onClick={this.props.reloadData}>Add</Button>
             </Form>
           </Segment>
         </div>

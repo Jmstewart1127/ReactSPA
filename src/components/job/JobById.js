@@ -115,7 +115,7 @@ class JobById extends Component {
                 </Segment.Group>
                 <Segment.Group className='widget'>
                   <Header as='h2' className='widget-header'>
-                    <Icon name='cubes' size='small'/>
+                    <Icon name='university' size='small'/>
                     <Header.Content>
                       Business
                     </Header.Content>

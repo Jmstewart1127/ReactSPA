@@ -90,7 +90,7 @@ class AddJobForm extends Component {
                   onChange={this.handleChange('amountCharged')}
                 />
               </Form.Field>
-              <Button type='submit' onClick={this.props.reloadData}>Submit</Button>
+              <Button type='submit' onClick={this.props.reloadData}>Add</Button>
             </Form>
           </Segment>
         </div>

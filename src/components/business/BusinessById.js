@@ -126,6 +126,11 @@ class BusinessById extends Component {
                   <EmployeesHeader
                     headerTitle={"Employees"}
                   />
+                  <AddEmployeeForm
+                    bizId={this.state.businessId}
+                    visible={this.state.employeeFormVisible}
+                    reloadData={reloadEmployees}
+                  />
                   {this.state.employeeData.map((employee) => {
                     return (
                       <EmployeeSegment
@@ -134,16 +139,16 @@ class BusinessById extends Component {
                       />
                     );
                   })}
-                  <AddEmployeeForm
-                    bizId={this.state.businessId}
-                    visible={this.state.employeeFormVisible}
-                    reloadData={reloadEmployees}
-                  />
                 </Segment.Group>
                 <Segment.Group className='widget'>
                   <Button icon='add cubes' floated='right' onClick={toggleJobVisibility} size='large'/>
                   <JobsHeader
                     headerTitle={"Job Sites"}
+                  />
+                  <AddJobForm
+                    bizId={this.state.businessId}
+                    visible={this.state.jobFormVisible}
+                    reloadData={reloadJobs}
                   />
                   {this.state.jobData.map((job) => {
                     return (
@@ -153,11 +158,6 @@ class BusinessById extends Component {
                       />
                     );
                   })}
-                  <AddJobForm
-                    bizId={this.state.bizId}
-                    visible={this.state.jobFormVisible}
-                    reloadData={reloadJobs}
-                  />
                 </Segment.Group>
               </Grid.Column>
             </Grid.Row>
