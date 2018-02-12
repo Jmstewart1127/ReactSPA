@@ -2,21 +2,23 @@ import React, { Component } from 'react'
 import { Grid, Button, Loader, Checkbox, Icon, Table } from 'semantic-ui-react';
 import TimeClockSlider from '../misc/TimeClockSlider';
 
-class SemanticTable extends Component {
+class EmployeesByBusiness extends Component {
   constructor(props) {
     super(props);
     this.state = {
       employeeData: [],
+      businessId: props.match.params.id,
       clockStatus: false,
       isLoading: true,
     }
   }
 
   setEmployeeData = () => {
-    let id = localStorage.getItem('id');
-    fetch('https://spring-clock.herokuapp.com/rest/get/all/employees/' + id)
+    let id = this.state.businessId;
+    fetch('https://spring-clock.herokuapp.com/rest/employees/' + id)
       .then((response) => response.json())
       .then((responseJson) => {
+        console.log("bizID: " + this.state.businessId);
         this.setState({
           employeeData: responseJson,
           isLoading: false,
@@ -103,4 +105,4 @@ class SemanticTable extends Component {
   }
 }
 
-export default SemanticTable
+export default EmployeesByBusiness

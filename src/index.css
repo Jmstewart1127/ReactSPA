@@ -60,6 +60,12 @@ body {
   background-color: #f4f4f4 !important;
 }
 
+.outside-button {
+  border-bottom-right-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
 
 
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Button, Divider, Grid, Header, Loader, Icon,  Segment } from 'semantic-ui-react';
+import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
 import AddEmployeeForm from '../employee/AddEmployeeForm';
 import EmployeeSegment from '../employee/EmployeeSegmentList';
 import JobSegment from '../job/JobSegmentList';
@@ -122,7 +123,12 @@ class BusinessById extends Component {
               </Grid.Column>
               <Grid.Column floated='right' width={5}>
                 <Segment.Group className='widget'>
-                  <Button icon='add user' floated='right' onClick={toggleEmployeeVisibility} size='large'/>
+                  <Button.Group floated='right'>
+                    <Button icon='add user' floated='right' onClick={toggleEmployeeVisibility} size='large'/>
+                    <Link to={`/View/Employees/${this.state.businessId}`}>
+                      <Button className='outside-button' icon='magnify' floated='right' size='large'/>
+                    </Link>
+                  </Button.Group>
                   <EmployeesHeader
                     headerTitle={"Employees"}
                   />

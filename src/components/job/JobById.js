@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import { Divider, Grid, Header, Loader, Icon, Segment } from 'semantic-ui-react';
+import { Button, Divider, Grid, Header, Loader, Icon, Segment } from 'semantic-ui-react';
+import AddEmployeeToJob from '../employee/AddEmployeeToJobForm';
+import EmployeeHeader from '../employee/EmployeeWidgetHeader';
 import EmployeeSegment from '../employee/EmployeeSegmentList';
 import BusinessSegment from '../business/BusinessSegmentList';
 
@@ -11,9 +13,18 @@ class JobById extends Component {
       businessData: [],
       employeeData: [],
       jobData: [],
+      addEmployeeVisibility: false,
       isLoading: true,
     }
   }
+
+  toggleEmployeeVisibility = () => {
+    if (this.state.addEmployeeVisibility) {
+      this.setState({addEmployeeVisibility: false});
+    } else {
+      this.setState({addEmployeeVisibility: true});
+    }
+  };
 
   setBusinessData = () => {
     let id = this.state.jobData.bizId;
@@ -70,6 +81,7 @@ class JobById extends Component {
   }
 
   render() {
+    const toggleEmployeeVisibility = () => { this.toggleEmployeeVisibility(); };
     if (this.state.isLoading) {
       return (
         <div className='loader'>
@@ -98,15 +110,20 @@ class JobById extends Component {
               </Grid.Column>
               <Grid.Column floated='right' width={5}>
                 <Segment.Group className='widget'>
-                  <Header as='h2' className='widget-header'>
-                    <Icon name='users' size='small'/>
-                    <Header.Content>
-                      Employees
-                    </Header.Content>
-                  </Header>
+                  <Button icon='add' floated='right' onClick={toggleEmployeeVisibility} size='large'/>
+                  <EmployeeHeader
+                    headerTitle={"Employees"}
+                  />
+                  <AddEmployeeToJob
+                    visible={this.state.addEmployeeVisibility}
+                    bizId={this.state.jobData.bizId}
+                    jobId={this.state.jobId}
+                    employeesOnJob={this.state.employeeData}
+                  />
                   {this.state.employeeData.map((employee) => {
                     return (
                       <EmployeeSegment
+                        key={employee.id}
                         id={employee.id}
                         employeeName={employee.user}
                       />

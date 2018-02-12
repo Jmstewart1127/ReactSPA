@@ -5,6 +5,7 @@ import SemanticTable from "./components/employee/SemanticTable";
 import Businesses from "./components/business/Businesses";
 import BusinessById from "./components/business/BusinessById";
 import EmployeeById from "./components/employee/EmployeeById";
+import EmployeesByBusiness from "./components/employee/EmployeesByBusiness";
 import JobById from "./components/job/JobById";
 import Login from "./components/auth/Login";
 import Logout from "./components/auth/Logout";
@@ -83,6 +84,7 @@ class App extends Component {
                   <Route exact path="/" component={Login} loggedIn={this.state.loggedIn}/>
                   <Route path="/Employees" component={SemanticTable}/>
                   <Route path="/Employee/:id" component={EmployeeById}/>
+                  <Route path="/View/Employees/:id" component={EmployeesByBusiness}/>
                   <Route path="/Businesses" component={Businesses}/>
                   <Route path="/Business/:id" component={BusinessById}/>
                   <Route path="/Job/:id" component={JobById}/>
