@@ -51,7 +51,6 @@ class JobById extends Component {
           employeeData: responseJson,
           isLoading: false,
         });
-        console.log(this.state.employeeData);
       })
       .catch((error) => {
         console.error(error);
@@ -67,7 +66,6 @@ class JobById extends Component {
           jobData: responseJson,
           isLoading: false,
         });
-        console.log(this.state.jobData);
       })
       .then(() => this.setBusinessData())
       .catch((error) => {
@@ -82,6 +80,7 @@ class JobById extends Component {
 
   render() {
     const toggleEmployeeVisibility = () => { this.toggleEmployeeVisibility(); };
+    const reloadEmployees = () => { this.setEmployeeData(); };
     if (this.state.isLoading) {
       return (
         <div className='loader'>
@@ -115,6 +114,7 @@ class JobById extends Component {
                     headerTitle={"Employees"}
                   />
                   <AddEmployeeToJob
+                    onClick={reloadEmployees}
                     visible={this.state.addEmployeeVisibility}
                     bizId={this.state.jobData.bizId}
                     jobId={this.state.jobId}

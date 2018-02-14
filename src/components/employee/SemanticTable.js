@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Grid, Button, Loader, Checkbox, Icon, Table } from 'semantic-ui-react';
+import EmployeeHeader from './EmployeeHeader';
+import AddEmployeeForm from './AddEmployeeForm';
 import TimeClockSlider from '../misc/TimeClockSlider';
 
 class SemanticTable extends Component {
@@ -9,8 +11,17 @@ class SemanticTable extends Component {
       employeeData: [],
       clockStatus: false,
       isLoading: true,
+      visible: false,
     }
   }
+
+  toggleVisibility = () => {
+    if (this.state.visible) {
+      this.setState({visible: false});
+    } else {
+      this.setState({visible: true});
+    }
+  };
 
   setEmployeeData = () => {
     let id = localStorage.getItem('id');
@@ -52,6 +63,9 @@ class SemanticTable extends Component {
       return (
         <Grid container columns={1}>
           <Grid.Column>
+            <EmployeeHeader
+              headerTitle={"Employees"}
+            />
             <Table celled>
               <Table.Header>
                 <Table.Row>
@@ -88,14 +102,22 @@ class SemanticTable extends Component {
               <Table.Footer fullWidth>
                 <Table.Row>
                   <Table.HeaderCell/>
-                  <Table.HeaderCell colSpan='4'>
-                    <Button floated='right' icon labelPosition='left' primary size='small'>
+                  <Table.HeaderCell colSpan='5'>
+                    <Button
+                      floated='right'
+                      icon labelPosition='left'
+                      primary size='small'
+                      onClick={this.toggleVisibility}
+                    >
                       <Icon name='user'/> Add User
                     </Button>
                   </Table.HeaderCell>
                 </Table.Row>
               </Table.Footer>
             </Table>
+            <AddEmployeeForm
+              visible={this.state.visible}
+            />
           </Grid.Column>
         </Grid>
       );

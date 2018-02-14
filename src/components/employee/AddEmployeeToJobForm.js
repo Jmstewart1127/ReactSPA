@@ -9,6 +9,8 @@ class AddEmployeeForm extends Component {
       businessName: '',
       employeeName: '',
       employeesOnJob: [],
+      employeeIds: [],
+      employeeIdsOnJob: [],
       isOnJob: false,
       submitted: false,
     }
@@ -42,28 +44,19 @@ class AddEmployeeForm extends Component {
     event.preventDefault();
   }
 
-  getEmployeesAssignedToJob = () => {
-    let id = this.props.jobId;
-    fetch('https://spring-clock.herokuapp.com/rest/jobs/assigned/employees/' + id)
-      .then((response) => response.json())
-      .then((responseJson) => {
-        console.log(responseJson);
-        this.setState({
-          employeesOnJob: responseJson,
-          isLoading: false,
-        });
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
-
   setEmployeeData = () => {
     let id = this.props.bizId;
+    const employeeData = [];
+    const ids = [];
     fetch('https://spring-clock.herokuapp.com/rest/employees/' + id)
       .then((response) => response.json())
       .then((responseJson) => {
+        for (let i = 0; i < responseJson.length; i++) {
+          ids.push(responseJson[i].id);
+        }
+
         this.setState({
+          employeeIds: ids,
           employeeData: responseJson,
           isLoading: false,
         });
@@ -100,23 +93,11 @@ class AddEmployeeForm extends Component {
         clockId: employeeId,
         jobId: this.props.jobId,
       })
-    })
-  };
-
-  findEmployeesAlreadyOnJob = employeeId => {
-    for (let i = 0; i < this.props.employeesOnJob.length; i++) {
-      if (this.props.employeesOnJob[i].id === employeeId) {
-        return true;
-      } else {
-        return false;
-      }
-    }
+    });
   };
 
   componentDidMount() {
     this.setEmployeeData();
-    this.findEmployeesAlreadyOnJob(2);
-    console.log(this.props.bizId);
   }
 
   render() {
@@ -131,13 +112,12 @@ class AddEmployeeForm extends Component {
               const removeEmployee = () => {
                 this.removeEmployeeFromJob(employee.id);
               };
-              const isOnJob = () => {
-                this.findEmployeesAlreadyOnJob(employee.id);
-              };
               return (
                 <AddToJobCheckBox
+                  key={employee.id}
+                  jobId={this.props.jobId}
+                  employeeId={employee.id}
                   employeeName={employee.user}
-                  isOnJob={isOnJob}
                   handleAdd={addEmployee}
                   handleRemove={removeEmployee}
                 />
