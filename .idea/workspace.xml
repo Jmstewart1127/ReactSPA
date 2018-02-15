@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15c76d52-e3fa-4992-bd87-804e95bff18d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/components/employee/AddEmployeeToJobForm.js" afterPath="$PROJECT_DIR$/src/components/employee/AddEmployeeToJobForm.js" />
       <change beforePath="$PROJECT_DIR$/src/components/misc/AddEmployeeToJobCheckBox.js" afterPath="$PROJECT_DIR$/src/components/misc/AddEmployeeToJobCheckBox.js" />
     </list>
@@ -54,8 +53,8 @@
       <file leaf-file-name="AddEmployeeToJobForm.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/employee/AddEmployeeToJobForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6">
-              <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="82" selection-end-column="4" />
+            <state relative-caret-position="1224">
+              <caret line="72" column="0" lean-forward="true" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -66,8 +65,8 @@
       <file leaf-file-name="AddEmployeeToJobCheckBox.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/misc/AddEmployeeToJobCheckBox.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="48" column="39" lean-forward="true" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
+            <state relative-caret-position="255">
+              <caret line="43" column="6" lean-forward="true" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -318,12 +317,12 @@
       <workItem from="1517956203223" duration="46000" />
       <workItem from="1517959237004" duration="291000" />
       <workItem from="1517959546314" duration="3805000" />
-      <workItem from="1518727524214" duration="5306000" />
+      <workItem from="1518727524214" duration="5893000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126792000" />
+    <option name="totallyTimeSpent" value="127379000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1920" height="1050" extended-state="7" />
@@ -725,8 +724,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/employee/AddEmployeeToJobForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6">
-          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="82" selection-end-column="4" />
+        <state relative-caret-position="1224">
+          <caret line="72" column="0" lean-forward="true" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
@@ -735,8 +734,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/misc/AddEmployeeToJobCheckBox.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="48" column="39" lean-forward="true" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
+        <state relative-caret-position="255">
+          <caret line="43" column="6" lean-forward="true" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
           <folding />
         </state>
       </provider>

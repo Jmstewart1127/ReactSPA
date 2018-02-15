@@ -67,21 +67,6 @@ class AddEmployeeForm extends Component {
       });
   };
 
-  addEmployeeToJob = employeeId => {
-    fetch('https://spring-clock.herokuapp.com/rest/jobs/assign/single/employee', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        bizId: this.props.bizId,
-        clockId: employeeId,
-        jobId: this.props.jobId,
-      })
-    });
-  };
-
   componentDidMount() {
     this.setEmployeeData();
   }
@@ -106,7 +91,6 @@ class AddEmployeeForm extends Component {
                   jobId={this.props.jobId}
                   employeeId={employee.id}
                   employeeName={employee.user}
-                  handleAdd={addEmployee}
                 />
               );
             })}

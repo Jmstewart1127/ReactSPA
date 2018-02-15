@@ -41,9 +41,6 @@ class AddEmployeeToJobCheckBox extends Component {
         clockId: this.props.employeeId,
         jobId: this.props.jobId,
       })
-        .then(() => {
-          this.setState({ isOnJob: true });
-        })
     })
       .then(() => {
         this.setState({ isOnJob: true });
