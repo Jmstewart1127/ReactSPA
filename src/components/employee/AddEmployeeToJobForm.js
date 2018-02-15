@@ -11,6 +11,7 @@ class AddEmployeeForm extends Component {
       employeesOnJob: [],
       employeeIds: [],
       employeeIdsOnJob: [],
+      scheduleData: [],
       isOnJob: false,
       submitted: false,
     }
@@ -66,21 +67,6 @@ class AddEmployeeForm extends Component {
       });
   };
 
-  removeEmployeeFromJob = employeeId => {
-    fetch('https://spring-clock.herokuapp.com/rest/schedule/delete', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        bizId: this.props.bizId,
-        clockId: employeeId,
-        jobId: this.props.jobId,
-      })
-    })
-  };
-
   addEmployeeToJob = employeeId => {
     fetch('https://spring-clock.herokuapp.com/rest/jobs/assign/single/employee', {
       method: 'POST',
@@ -108,9 +94,11 @@ class AddEmployeeForm extends Component {
             {this.state.employeeData.map((employee) => {
               const addEmployee = () => {
                 this.addEmployeeToJob(employee.id);
+                this.setEmployeeData();
               };
               const removeEmployee = () => {
                 this.removeEmployeeFromJob(employee.id);
+                this.setEmployeeData();
               };
               return (
                 <AddToJobCheckBox
@@ -119,7 +107,6 @@ class AddEmployeeForm extends Component {
                   employeeId={employee.id}
                   employeeName={employee.user}
                   handleAdd={addEmployee}
-                  handleRemove={removeEmployee}
                 />
               );
             })}

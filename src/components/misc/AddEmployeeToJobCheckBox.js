@@ -29,6 +29,46 @@ class AddEmployeeToJobCheckBox extends Component {
       });
   };
 
+  addEmployeeToJob = () => {
+    fetch('https://spring-clock.herokuapp.com/rest/jobs/assign/single/employee', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        bizId: this.props.bizId,
+        clockId: this.props.employeeId,
+        jobId: this.props.jobId,
+      })
+        .then(() => {
+          this.setState({ isOnJob: true });
+        })
+    })
+      .then(() => {
+        this.setState({ isOnJob: true });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  removeEmployeeFromJob = () => {
+    let clockId = this.props.employeeId;
+    let jobId = this.props.jobId;
+    console.log(clockId + " " + jobId);
+    fetch('https://spring-clock.herokuapp.com/rest/schedule/delete/' + clockId + '/' + jobId)
+      .then(() => {
+        this.setState({isOnJob: false});
+      })
+      .then(() => {
+        this.getEmployeesAssignedToJob();
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   checkIfOnJob = () => {
     for (let i = 0; i < this.state.employeeIdsOnJob.length; i++) {
       if (this.state.employeeIdsOnJob[i] === this.props.employeeId) {
@@ -42,12 +82,18 @@ class AddEmployeeToJobCheckBox extends Component {
   }
 
   render() {
+    const addEmployeeToJob = () => {
+      this.addEmployeeToJob();
+    };
+    const removeEmployeeFromJob = () => {
+      this.removeEmployeeFromJob();
+    };
     if (this.state.isOnJob) {
       return(
         <div>
           <Checkbox
             label={this.props.employeeName}
-            onClick={this.props.handleRemove}
+            onClick={removeEmployeeFromJob}
             checked={true}
           />
         </div>
@@ -57,7 +103,7 @@ class AddEmployeeToJobCheckBox extends Component {
         <div>
           <Checkbox
             label={this.props.employeeName}
-            onClick={this.props.handleAdd}
+            onClick={addEmployeeToJob}
           />
         </div>
       );
