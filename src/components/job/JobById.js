@@ -80,7 +80,7 @@ class JobById extends Component {
 
   render() {
     const toggleEmployeeVisibility = () => { this.toggleEmployeeVisibility(); };
-    const reloadEmployees = () => { return this.setEmployeeData(); };
+    const reloadEmployees = () => { this.setEmployeeData(); };
     if (this.state.isLoading) {
       return (
         <div className='loader'>

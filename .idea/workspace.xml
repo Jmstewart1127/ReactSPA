@@ -4,10 +4,9 @@
     <list default="true" id="15c76d52-e3fa-4992-bd87-804e95bff18d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/components/business/BusinessById.js" afterPath="$PROJECT_DIR$/src/components/business/BusinessById.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/employee/AddEmployeeToJobForm.js" afterPath="$PROJECT_DIR$/src/components/employee/AddEmployeeToJobForm.js" />
       <change beforePath="$PROJECT_DIR$/src/components/employee/EmployeeById.js" afterPath="$PROJECT_DIR$/src/components/employee/EmployeeById.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/employee/SemanticTable.js" afterPath="$PROJECT_DIR$/src/components/employee/SemanticTable.js" />
       <change beforePath="$PROJECT_DIR$/src/components/job/JobById.js" afterPath="$PROJECT_DIR$/src/components/job/JobById.js" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" afterPath="$PROJECT_DIR$/src/index.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="JobById.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="JobById.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/job/JobById.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="902">
-              <caret line="121" column="49" lean-forward="false" selection-start-line="121" selection-start-column="49" selection-end-line="121" selection-end-column="49" />
+            <state relative-caret-position="751">
+              <caret line="107" column="32" lean-forward="true" selection-start-line="107" selection-start-column="32" selection-end-line="107" selection-end-column="32" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -33,14 +32,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddEmployeeToJobForm.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/employee/AddEmployeeToJobForm.js">
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="876">
-              <caret line="83" column="48" lean-forward="false" selection-start-line="83" selection-start-column="48" selection-end-line="83" selection-end-column="48" />
+            <state relative-caret-position="328">
+              <caret line="49" column="16" lean-forward="true" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EmployeeById.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/employee/EmployeeById.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="72" column="78" lean-forward="true" selection-start-line="72" selection-start-column="78" selection-end-line="72" selection-end-column="78" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EmployeeHeader.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/employee/EmployeeHeader.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="1" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -48,8 +79,8 @@
       <file leaf-file-name="BusinessById.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/business/BusinessById.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="524">
-              <caret line="129" column="109" lean-forward="false" selection-start-line="129" selection-start-column="109" selection-end-line="129" selection-end-column="109" />
+            <state relative-caret-position="576">
+              <caret line="142" column="40" lean-forward="true" selection-start-line="142" selection-start-column="40" selection-end-line="142" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -107,15 +138,15 @@
         <option value="$PROJECT_DIR$/src/components/job/JobWidgetHeader.js" />
         <option value="$PROJECT_DIR$/src/components/job/AddJobForm.js" />
         <option value="$PROJECT_DIR$/src/components/employee/AddEmployeeForm.js" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/employee/EmployeesByBusiness.js" />
-        <option value="$PROJECT_DIR$/src/index.css" />
         <option value="$PROJECT_DIR$/src/components/misc/AddEmployeeToJobCheckBox.js" />
-        <option value="$PROJECT_DIR$/src/components/business/BusinessById.js" />
-        <option value="$PROJECT_DIR$/src/components/employee/EmployeeById.js" />
         <option value="$PROJECT_DIR$/src/components/employee/SemanticTable.js" />
         <option value="$PROJECT_DIR$/src/components/employee/AddEmployeeToJobForm.js" />
         <option value="$PROJECT_DIR$/src/components/job/JobById.js" />
+        <option value="$PROJECT_DIR$/src/components/business/BusinessById.js" />
+        <option value="$PROJECT_DIR$/src/index.css" />
+        <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/components/employee/EmployeeById.js" />
       </list>
     </option>
   </component>
@@ -285,7 +316,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131663000" />
+    <option name="totallyTimeSpent" value="134160000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1972" height="1352" extended-state="0" />
@@ -343,13 +374,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/business/BusinessTable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="23" lean-forward="false" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -589,16 +613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="74" column="38" lean-forward="true" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#40#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/employee/EmployeesByBusiness.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7">
@@ -606,13 +620,6 @@
           <folding>
             <element signature="e#0#40#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16">
-          <caret line="63" column="43" lean-forward="false" selection-start-line="63" selection-start-column="43" selection-end-line="63" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -650,22 +657,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/misc/AddEmployeeToJobCheckBox.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="801">
-          <caret line="91" column="25" lean-forward="true" selection-start-line="91" selection-start-column="25" selection-end-line="91" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/employee/EmployeeById.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="87" column="52" lean-forward="true" selection-start-line="87" selection-start-column="52" selection-end-line="87" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/employee/EmployeeTable.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="750">
@@ -690,10 +681,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/business/BusinessById.js">
+    <entry file="file://$PROJECT_DIR$/src/components/misc/AddEmployeeToJobCheckBox.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="129" column="109" lean-forward="false" selection-start-line="129" selection-start-column="109" selection-end-line="129" selection-end-column="109" />
+        <state relative-caret-position="1350">
+          <caret line="91" column="25" lean-forward="true" selection-start-line="91" selection-start-column="25" selection-end-line="91" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -710,8 +701,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/job/JobById.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="902">
-          <caret line="121" column="49" lean-forward="false" selection-start-line="121" selection-start-column="49" selection-end-line="121" selection-end-column="49" />
+        <state relative-caret-position="751">
+          <caret line="107" column="32" lean-forward="true" selection-start-line="107" selection-start-column="32" selection-end-line="107" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/employee/EmployeeHeader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/business/BusinessById.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="142" column="40" lean-forward="true" selection-start-line="142" selection-start-column="40" selection-end-line="142" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="1" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="49" column="16" lean-forward="true" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/employee/EmployeeById.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="72" column="78" lean-forward="true" selection-start-line="72" selection-start-column="78" selection-end-line="72" selection-end-column="78" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>

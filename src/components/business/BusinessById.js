@@ -125,9 +125,9 @@ class BusinessById extends Component {
                 <Segment.Group className='widget'>
                   <Button.Group floated='right'>
                     <Link to={`/View/Employees/${this.state.businessId}`}>
-                      <Button className='outside-button' icon='magnify' floated='right' size='large'/>
+                      <Button className='inner-button' icon='magnify' floated='right' size='large'/>
                     </Link>
-                    <Button icon='add user' floated='right' onClick={toggleEmployeeVisibility} size='large'/>
+                    <Button className='outside-button' icon='add user' floated='right' onClick={toggleEmployeeVisibility} size='large'/>
                   </Button.Group>
                   <EmployeesHeader
                     headerTitle={"Employees"}
@@ -147,7 +147,7 @@ class BusinessById extends Component {
                   })}
                 </Segment.Group>
                 <Segment.Group className='widget'>
-                  <Button icon='add cubes' floated='right' onClick={toggleJobVisibility} size='large'/>
+                  <Button className='single-button' icon='add cubes' floated='right' onClick={toggleJobVisibility} size='large'/>
                   <JobsHeader
                     headerTitle={"Job Sites"}
                   />

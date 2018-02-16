@@ -27,6 +27,11 @@ body {
   padding: 2% 0 0 2% !important;
 }
 
+.main-widget-header-with-button {
+  padding: 1% 0 2% 2% !important;
+  margin: 0 !important;
+}
+
 .login-submit-button {
   margin-left: auto !important;
   margin-right: auto !important;
@@ -60,10 +65,23 @@ body {
   background-color: #f4f4f4 !important;
 }
 
+.inner-button {
+  border-bottom-right-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
 .outside-button {
   border-bottom-right-radius: 0 !important;
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
+  border-top-right-radius: .28571429rem;
+}
+
+.single-button {
+  border-bottom-right-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: .28571429rem;
 }
 
 

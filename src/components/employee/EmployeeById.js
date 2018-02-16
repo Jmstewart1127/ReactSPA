@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Divider, Grid, Header, Loader, Icon,  Segment } from 'semantic-ui-react';
+import { Button, Divider, Grid, Header, Loader, Icon,  Segment } from 'semantic-ui-react';
 import BusinessSegment from '../business/BusinessSegmentList';
 import JobSegment from '../job/JobSegmentList';
 
@@ -84,7 +84,8 @@ class BusinessById extends Component {
             <Grid.Row stretched>
               <Grid.Column width={11}>
                 <Segment.Group className='widget'>
-                  <Header as='h2' className='main-widget-header'>
+                  <Button className='single-button' icon='settings' floated='right' size='large'/>
+                  <Header as='h2' className='main-widget-header-with-button'>
                     <Icon name='user' size='small'/>
                     <Header.Content>
                       {this.state.employeeData.user}
