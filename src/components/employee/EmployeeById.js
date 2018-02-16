@@ -70,6 +70,7 @@ class BusinessById extends Component {
   }
 
   render() {
+    const totalPay = Math.round(this.state.employeeData.totalPay * 100) / 100;
     if (this.state.isLoading) {
       return (
         <div className='loader'>
@@ -92,7 +93,7 @@ class BusinessById extends Component {
                   <Segment>
                     Pay Rate: ${this.state.employeeData.payRate}
                     <Divider hidden/>
-                    Pay For This Period: ${this.state.employeeData.totalPay}
+                    Pay For This Period: ${totalPay}
                   </Segment>
                 </Segment.Group>
               </Grid.Column>

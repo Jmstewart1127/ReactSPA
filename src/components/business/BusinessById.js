@@ -124,10 +124,10 @@ class BusinessById extends Component {
               <Grid.Column floated='right' width={5}>
                 <Segment.Group className='widget'>
                   <Button.Group floated='right'>
-                    <Button icon='add user' floated='right' onClick={toggleEmployeeVisibility} size='large'/>
                     <Link to={`/View/Employees/${this.state.businessId}`}>
                       <Button className='outside-button' icon='magnify' floated='right' size='large'/>
                     </Link>
+                    <Button icon='add user' floated='right' onClick={toggleEmployeeVisibility} size='large'/>
                   </Button.Group>
                   <EmployeesHeader
                     headerTitle={"Employees"}

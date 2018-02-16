@@ -47,7 +47,6 @@ class AddEmployeeForm extends Component {
 
   setEmployeeData = () => {
     let id = this.props.bizId;
-    const employeeData = [];
     const ids = [];
     fetch('https://spring-clock.herokuapp.com/rest/employees/' + id)
       .then((response) => response.json())
@@ -55,7 +54,6 @@ class AddEmployeeForm extends Component {
         for (let i = 0; i < responseJson.length; i++) {
           ids.push(responseJson[i].id);
         }
-
         this.setState({
           employeeIds: ids,
           employeeData: responseJson,
@@ -77,20 +75,13 @@ class AddEmployeeForm extends Component {
         <div className='loader'>
           <Segment>
             {this.state.employeeData.map((employee) => {
-              const addEmployee = () => {
-                this.addEmployeeToJob(employee.id);
-                this.setEmployeeData();
-              };
-              const removeEmployee = () => {
-                this.removeEmployeeFromJob(employee.id);
-                this.setEmployeeData();
-              };
               return (
                 <AddToJobCheckBox
                   key={employee.id}
                   jobId={this.props.jobId}
                   employeeId={employee.id}
                   employeeName={employee.user}
+                  onClick={this.props.reloadData}
                 />
               );
             })}

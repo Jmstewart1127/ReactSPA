@@ -48,6 +48,14 @@ class SemanticTable extends Component {
       });
   };
 
+  clockStatusText = clockStatus => {
+    if (clockStatus === true) {
+      return "Clocked In";
+    } else {
+      return "Clocked Out";
+    }
+  };
+
   componentDidMount() {
     this.setEmployeeData();
   }
@@ -82,6 +90,9 @@ class SemanticTable extends Component {
                   const handleClockInOut = () => {
                     this.clockEmployeeInOrOut(employee.id);
                   };
+                  const clockStatusText = () => {
+                    return this.clockStatusText(employee.clocked);
+                  };
                   return (
                     <Table.Row key={employee.id}>
                       <Table.Cell collapsing>
@@ -94,7 +105,7 @@ class SemanticTable extends Component {
                       <Table.Cell>{employee.user}</Table.Cell>
                       <Table.Cell>{employee.payRate}</Table.Cell>
                       <Table.Cell>{Math.round(employee.totalPay * 100) / 100}</Table.Cell>
-                      <Table.Cell>{employee.clocked.toString()}</Table.Cell>
+                      <Table.Cell>{clockStatusText()}</Table.Cell>
                     </Table.Row>
                   );
                 })}

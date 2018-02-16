@@ -80,7 +80,7 @@ class JobById extends Component {
 
   render() {
     const toggleEmployeeVisibility = () => { this.toggleEmployeeVisibility(); };
-    const reloadEmployees = () => { this.setEmployeeData(); };
+    const reloadEmployees = () => { return this.setEmployeeData(); };
     if (this.state.isLoading) {
       return (
         <div className='loader'>
@@ -119,6 +119,7 @@ class JobById extends Component {
                     bizId={this.state.jobData.bizId}
                     jobId={this.state.jobId}
                     employeesOnJob={this.state.employeeData}
+                    reloadData={reloadEmployees()}
                   />
                   {this.state.employeeData.map((employee) => {
                     return (
