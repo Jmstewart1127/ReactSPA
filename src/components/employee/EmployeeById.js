@@ -84,7 +84,10 @@ class BusinessById extends Component {
             <Grid.Row stretched>
               <Grid.Column width={11}>
                 <Segment.Group className='widget'>
-                  <Button className='single-button' icon='settings' floated='right' size='large'/>
+                  <Button.Group floated='right'>
+                    <Button className='single-button' icon='remove' floated='right' size='large'/>
+                    <Button className='single-button' icon='configure' floated='right' size='large'/>
+                  </Button.Group>
                   <Header as='h2' className='main-widget-header-with-button'>
                     <Icon name='user' size='small'/>
                     <Header.Content>
