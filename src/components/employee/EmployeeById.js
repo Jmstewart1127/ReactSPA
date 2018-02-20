@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Divider, Grid, Header, Loader, Icon,  Segment } from 'semantic-ui-react';
 import BusinessSegment from '../business/BusinessSegmentList';
+import DeleteUser from '../misc/DeleteUser';
 import JobSegment from '../job/JobSegmentList';
 
 class BusinessById extends Component {
@@ -85,7 +86,10 @@ class BusinessById extends Component {
               <Grid.Column width={11}>
                 <Segment.Group className='widget'>
                   <Button.Group floated='right'>
-                    <Button className='single-button' icon='remove' floated='right' size='large'/>
+                    <DeleteUser
+                      id={this.state.employeeData.id}
+                      employeeName={this.state.employeeData.user}
+                    />
                     <Button className='single-button' icon='configure' floated='right' size='large'/>
                   </Button.Group>
                   <Header as='h2' className='main-widget-header-with-button'>
