@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Button, Divider, Grid, Header, Loader, Icon,  Segment } from 'semantic-ui-react';
+import EditEmployee from './EditEmployeeForm';
 import BusinessSegment from '../business/BusinessSegmentList';
 import DeleteUser from '../misc/DeleteUser';
 import JobSegment from '../job/JobSegmentList';
@@ -12,9 +13,18 @@ class BusinessById extends Component {
       businessData: [],
       employeeData: [],
       jobData: [],
+      editEmployeeVisible: false,
       isLoading: true,
     }
   }
+
+  toggleEditEmployeeVisibility = () => {
+    if (this.state.editEmployeeVisible) {
+      this.setState({editEmployeeVisible: false});
+    } else {
+      this.setState({editEmployeeVisible: true});
+    }
+  };
 
   setBusinessData = () => {
     let id = this.state.employeeData.bizId;
@@ -66,6 +76,10 @@ class BusinessById extends Component {
       });
   };
 
+  reloadEmployeeData = () => {
+    setTimeout(() => {this.setEmployeeData()}, 500);
+  };
+
   componentDidMount() {
     this.setEmployeeData();
   }
@@ -88,9 +102,16 @@ class BusinessById extends Component {
                   <Button.Group floated='right'>
                     <DeleteUser
                       id={this.state.employeeData.id}
+                      bizId={this.state.employeeData.bizId}
                       employeeName={this.state.employeeData.user}
                     />
-                    <Button className='single-button' icon='configure' floated='right' size='large'/>
+                    <Button
+                      className='single-button'
+                      icon='configure'
+                      floated='right'
+                      size='large'
+                      onClick={this.toggleEditEmployeeVisibility}
+                    />
                   </Button.Group>
                   <Header as='h2' className='main-widget-header-with-button'>
                     <Icon name='user' size='small'/>
@@ -103,6 +124,14 @@ class BusinessById extends Component {
                     <Divider hidden/>
                     Pay For This Period: ${totalPay}
                   </Segment>
+                  <EditEmployee
+                    id={this.state.employeeData.id}
+                    bizId={this.state.employeeData.bizId}
+                    totalPay={totalPay}
+                    clockStatus={this.state.employeeData.clocked}
+                    reload={this.reloadEmployeeData}
+                    visible={this.state.editEmployeeVisible}
+                  />
                 </Segment.Group>
               </Grid.Column>
               <Grid.Column floated='right' width={5}>

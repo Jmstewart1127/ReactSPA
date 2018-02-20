@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Button, Divider, Grid, Header, Loader, Icon,  Segment } from 'semantic-ui-react';
-import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import AddEmployeeForm from '../employee/AddEmployeeForm';
 import EmployeeSegment from '../employee/EmployeeSegmentList';
 import JobSegment from '../job/JobSegmentList';

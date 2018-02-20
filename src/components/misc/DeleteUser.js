@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import { Link} from 'react-router-dom'
 import { Button, Modal } from 'semantic-ui-react'
+import DelayLink from '../misc/DelayLink'
 
 class DeleteUser extends Component {
   state = { open: false }
@@ -44,7 +46,14 @@ class DeleteUser extends Component {
             <Button negative onClick={this.close}>
               No
             </Button>
-            <Button positive icon='checkmark' labelPosition='right' content='Yes' onClick={this.deleteEmployee} />
+            <Link to={`/Business/${this.props.bizId}`} delay={200}>
+              <Button
+                positive icon='checkmark'
+                labelPosition='right'
+                content='Yes'
+                onClick={this.deleteEmployee}
+              />
+            </Link>
           </Modal.Actions>
         </Modal>
       </div>
