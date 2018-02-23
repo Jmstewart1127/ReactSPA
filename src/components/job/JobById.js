@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Divider, Grid, Header, Loader, Icon, Segment } from 'semantic-ui-react';
 import AddEmployeeToJob from '../employee/AddEmployeeToJobForm';
+import DeleteJob from '../misc/DeleteJob';
 import EmployeeHeader from '../employee/EmployeeWidgetHeader';
 import EmployeeSegment from '../employee/EmployeeSegmentList';
 import BusinessSegment from '../business/BusinessSegmentList';
@@ -94,6 +95,20 @@ class JobById extends Component {
             <Grid.Row stretched>
               <Grid.Column width={11}>
                 <Segment.Group className='widget'>
+                  <Button.Group floated='right'>
+                    <DeleteJob
+                      id={this.state.jobData.id}
+                      bizId={this.state.jobData.bizId}
+                      jobAddress={this.state.jobData.jobAddress}
+                    />
+                    <Button
+                      className='single-button'
+                      icon='configure'
+                      floated='right'
+                      size='large'
+                      onClick={this.toggleEditEmployeeVisibility}
+                    />
+                  </Button.Group>
                   <Header as='h2' className='main-widget-header'>
                     <Icon name='cubes' size='small'/>
                     <Header.Content>
