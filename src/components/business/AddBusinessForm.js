@@ -44,6 +44,7 @@ class AddBusinessForm extends Component {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
+        'Authorization': sessionStorage.getItem('jwt'),
       },
       body: JSON.stringify({
         adminId: localStorage.getItem('id'),

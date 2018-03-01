@@ -13,8 +13,12 @@ export default class FunLogin extends Component {
     }
   }
 
-  getUserId = (username, password) => {
-    fetch('https://spring-clock.herokuapp.com/rest/login/' + username + '/' + password)
+  getUserId = () => {
+    let username = this.state.username;
+    let password = this.state.password;
+    fetch('https://spring-clock.herokuapp.com/rest/login/' + username + '/' + password, {
+      headers: { 'Authorization': sessionStorage.getItem('jwt') }
+    })
       .then((response) => response.json())
       .then((responseJson) => {
         localStorage.setItem('id', responseJson.id);
@@ -23,6 +27,24 @@ export default class FunLogin extends Component {
       .catch((error) => {
         console.error(error);
       });
+  };
+
+  login = () => {
+    fetch('https://spring-clock.herokuapp.com/login', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Authorization': 'Bearer',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        userName: this.state.username,
+        password: this.state.password,
+      })
+    })
+      .then((response) => {
+        sessionStorage.setItem('jwt', response.headers.get('Authorization'));
+      })
   };
 
   handleUserNameChange = event => {
@@ -34,9 +56,9 @@ export default class FunLogin extends Component {
   };
 
   handleSubmit = event => {
-    this.getUserId(this.state.username, this.state.password);
+    this.login();
+    this.getUserId();
     event.preventDefault();
-    localStorage.setItem('id', this.state.userId);
     this.setState({
       loggedIn: true,
     })

@@ -13,7 +13,9 @@ class AddEmployeeToJobCheckBox extends Component {
   getEmployeesAssignedToJob = () => {
     let id = this.props.jobId;
     const ids = [];
-    fetch('https://spring-clock.herokuapp.com/rest/jobs/assigned/employees/' + id)
+    fetch('https://spring-clock.herokuapp.com/rest/jobs/assigned/employees/' + id, {
+      headers: {'Authorization': sessionStorage.getItem('jwt')}
+    })
       .then((response) => response.json())
       .then((responseJson) => {
         for (let i = 0; i < responseJson.length; i++) {
@@ -35,6 +37,7 @@ class AddEmployeeToJobCheckBox extends Component {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
+        'Authorization': sessionStorage.getItem('jwt'),
       },
       body: JSON.stringify({
         bizId: this.props.bizId,
@@ -54,7 +57,9 @@ class AddEmployeeToJobCheckBox extends Component {
     let clockId = this.props.employeeId;
     let jobId = this.props.jobId;
     console.log(clockId + " " + jobId);
-    fetch('https://spring-clock.herokuapp.com/rest/schedule/delete/' + clockId + '/' + jobId)
+    fetch('https://spring-clock.herokuapp.com/rest/schedule/delete/' + clockId + '/' + jobId, {
+      headers: {'Authorization': sessionStorage.getItem('jwt')}
+    })
       .then(() => {
         this.setState({isOnJob: false});
       })

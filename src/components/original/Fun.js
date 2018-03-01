@@ -17,7 +17,9 @@ export default class Fun extends Component {
 
   setArrayOfObjects = () => {
     const employeeData = [];
-    fetch('https://spring-clock.herokuapp.com/rest/get/all/employees/2')
+    fetch('https://spring-clock.herokuapp.com/rest/get/all/employees/2', {
+      headers: {'Authorization': sessionStorage.getItem('jwt')}
+    })
       .then((response) => response.json())
       .then((responseJson) => {
         for (let i = 0; i < responseJson.length; i++) {
@@ -33,7 +35,9 @@ export default class Fun extends Component {
   };
 
   clockEmployeeInOrOut = employeeId => {
-    fetch('https://spring-clock.herokuapp.com/rest/web/clock/in/out/' + employeeId)
+    fetch('https://spring-clock.herokuapp.com/rest/web/clock/in/out/' + employeeId, {
+      headers: {'Authorization': sessionStorage.getItem('jwt')}
+    })
       .then((responseJson) => {
         this.setState({ clockStatus: responseJson.id });
       })

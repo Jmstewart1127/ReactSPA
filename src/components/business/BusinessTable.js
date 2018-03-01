@@ -24,7 +24,9 @@ export default class BusinessTable extends Component {
 
   setBusinessData = () => {
     let id = localStorage.getItem('id');
-    fetch('https://spring-clock.herokuapp.com/rest/user/' + id + '/businesses')
+    fetch('https://spring-clock.herokuapp.com/rest/user/' + id + '/businesses', {
+      headers: {'Authorization': sessionStorage.getItem('jwt')}
+    })
       .then((response) => response.json())
       .then((responseJson) => {
         this.setState({

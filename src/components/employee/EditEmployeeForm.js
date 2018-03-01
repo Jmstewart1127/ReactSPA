@@ -46,6 +46,7 @@ class EditEmployeeForm extends Component {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
+        'Authorization': sessionStorage.getItem('jwt'),
       },
       body: JSON.stringify({
         id: this.props.id,

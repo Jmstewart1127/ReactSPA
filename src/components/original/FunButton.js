@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 export default class FunButton extends Component {
 
   clockEmployeeInOrOut = employeeId => {
-    fetch('https://spring-clock.herokuapp.com/rest/web/clock/in/out/' + employeeId)
+    fetch('https://spring-clock.herokuapp.com/rest/web/clock/in/out/' + employeeId, {
+      headers: {'Authorization': sessionStorage.getItem('jwt')}
+    })
       .then((responseJson) => {
         return responseJson;
       })

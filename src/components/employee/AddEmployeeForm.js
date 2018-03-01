@@ -46,6 +46,7 @@ class AddEmployeeForm extends Component {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
+        'Authorization': sessionStorage.getItem('jwt')
       },
       body: JSON.stringify({
         bizId: this.props.bizId,

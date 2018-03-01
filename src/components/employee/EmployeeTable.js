@@ -23,7 +23,9 @@ export default class EmployeeTable extends Component {
   }
 
   setEmployeeData = () => {
-    fetch('https://spring-clock.herokuapp.com/rest/get/all/employees/2')
+    fetch('https://spring-clock.herokuapp.com/rest/get/all/employees/2', {
+      headers: {'Authorization': sessionStorage.getItem('jwt')}
+    })
       .then((response) => response.json())
       .then((responseJson) => {
         this.setState({
@@ -36,7 +38,9 @@ export default class EmployeeTable extends Component {
   };
 
   clockEmployeeInOrOut = employeeId => {
-    fetch('https://spring-clock.herokuapp.com/rest/web/clock/in/out/' + employeeId)
+    fetch('https://spring-clock.herokuapp.com/rest/web/clock/in/out/' + employeeId, {
+      headers: {'Authorization': sessionStorage.getItem('jwt')}
+    })
       .then(() => {
         this.setEmployeeData();
       })

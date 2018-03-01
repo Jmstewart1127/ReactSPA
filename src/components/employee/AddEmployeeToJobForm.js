@@ -48,7 +48,9 @@ class AddEmployeeForm extends Component {
   setEmployeeData = () => {
     let id = this.props.bizId;
     const ids = [];
-    fetch('https://spring-clock.herokuapp.com/rest/employees/' + id)
+    fetch('https://spring-clock.herokuapp.com/rest/employees/' + id, {
+      headers: {'Authorization': sessionStorage.getItem('jwt')}
+    })
       .then((response) => response.json())
       .then((responseJson) => {
         for (let i = 0; i < responseJson.length; i++) {

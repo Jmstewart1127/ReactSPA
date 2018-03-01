@@ -25,7 +25,9 @@ class SemanticTable extends Component {
 
   setEmployeeData = () => {
     let id = localStorage.getItem('id');
-    fetch('https://spring-clock.herokuapp.com/rest/get/all/employees/' + id)
+    fetch('https://spring-clock.herokuapp.com/rest/get/all/employees/' + id, {
+      headers: {'Authorization': sessionStorage.getItem('jwt')}
+    })
       .then((response) => response.json())
       .then((responseJson) => {
         this.setState({
@@ -39,7 +41,9 @@ class SemanticTable extends Component {
   };
 
   clockEmployeeInOrOut = employeeId => {
-    fetch('https://spring-clock.herokuapp.com/rest/web/clock/in/out/' + employeeId)
+    fetch('https://spring-clock.herokuapp.com/rest/web/clock/in/out/' + employeeId, {
+      headers: {'Authorization': sessionStorage.getItem('jwt')}
+    })
       .then(() => {
         this.setEmployeeData();
       })

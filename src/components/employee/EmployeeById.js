@@ -28,7 +28,9 @@ class BusinessById extends Component {
 
   setBusinessData = () => {
     let id = this.state.employeeData.bizId;
-    fetch('https://spring-clock.herokuapp.com/rest/business/' + id)
+    fetch('https://spring-clock.herokuapp.com/rest/business/' + id, {
+      headers: {'Authorization': sessionStorage.getItem('jwt')}
+    })
       .then((response) => response.json())
       .then((responseJson) => {
         this.setState({
@@ -44,7 +46,9 @@ class BusinessById extends Component {
 
   setEmployeeData = () => {
     let id = this.state.employeeId;
-    fetch('https://spring-clock.herokuapp.com/rest/employee/' + id)
+    fetch('https://spring-clock.herokuapp.com/rest/employee/' + id, {
+      headers: {'Authorization': sessionStorage.getItem('jwt')}
+    })
       .then((response) => response.json())
       .then((responseJson) => {
         this.setState({
@@ -62,7 +66,9 @@ class BusinessById extends Component {
 
   setJobData = () => {
     let id = this.state.employeeId;
-    fetch('https://spring-clock.herokuapp.com/rest/jobs/assigned/employee/' + id)
+    fetch('https://spring-clock.herokuapp.com/rest/jobs/assigned/employee/' + id, {
+      headers: {'Authorization': sessionStorage.getItem('jwt')}
+    })
       .then((response) => response.json())
       .then((responseJson) => {
         this.setState({
