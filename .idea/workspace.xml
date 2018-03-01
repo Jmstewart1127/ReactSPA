@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15c76d52-e3fa-4992-bd87-804e95bff18d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/components/auth/Login.js" afterPath="$PROJECT_DIR$/src/components/auth/Login.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/business/AddBusinessForm.js" afterPath="$PROJECT_DIR$/src/components/business/AddBusinessForm.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/business/BusinessById.js" afterPath="$PROJECT_DIR$/src/components/business/BusinessById.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/business/BusinessTable.js" afterPath="$PROJECT_DIR$/src/components/business/BusinessTable.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/business/Businesses.js" afterPath="$PROJECT_DIR$/src/components/business/Businesses.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/employee/AddEmployeeForm.js" afterPath="$PROJECT_DIR$/src/components/employee/AddEmployeeForm.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/employee/AddEmployeeToJobForm.js" afterPath="$PROJECT_DIR$/src/components/employee/AddEmployeeToJobForm.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/employee/EditEmployeeForm.js" afterPath="$PROJECT_DIR$/src/components/employee/EditEmployeeForm.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/employee/EmployeeById.js" afterPath="$PROJECT_DIR$/src/components/employee/EmployeeById.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/employee/EmployeeTable.js" afterPath="$PROJECT_DIR$/src/components/employee/EmployeeTable.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/employee/EmployeesByBusiness.js" afterPath="$PROJECT_DIR$/src/components/employee/EmployeesByBusiness.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/employee/SemanticTable.js" afterPath="$PROJECT_DIR$/src/components/employee/SemanticTable.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/job/AddJobForm.js" afterPath="$PROJECT_DIR$/src/components/job/AddJobForm.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/job/JobById.js" afterPath="$PROJECT_DIR$/src/components/job/JobById.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/misc/AddEmployeeToJobCheckBox.js" afterPath="$PROJECT_DIR$/src/components/misc/AddEmployeeToJobCheckBox.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/misc/DeleteJob.js" afterPath="$PROJECT_DIR$/src/components/misc/DeleteJob.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/misc/DeleteUser.js" afterPath="$PROJECT_DIR$/src/components/misc/DeleteUser.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/original/Fun.js" afterPath="$PROJECT_DIR$/src/components/original/Fun.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/original/FunButton.js" afterPath="$PROJECT_DIR$/src/components/original/FunButton.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,7 +15,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Login.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/auth/Login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="32" column="51" lean-forward="false" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -81,7 +73,6 @@
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/misc/DeleteAccount.js" />
         <option value="$PROJECT_DIR$/src/components/misc/DelayLink.js" />
-        <option value="$PROJECT_DIR$/src/components/auth/Login.js" />
         <option value="$PROJECT_DIR$/src/components/business/AddBusinessForm.js" />
         <option value="$PROJECT_DIR$/src/components/business/BusinessById.js" />
         <option value="$PROJECT_DIR$/src/components/business/Businesses.js" />
@@ -100,6 +91,7 @@
         <option value="$PROJECT_DIR$/src/components/misc/DeleteUser.js" />
         <option value="$PROJECT_DIR$/src/components/original/Fun.js" />
         <option value="$PROJECT_DIR$/src/components/original/FunButton.js" />
+        <option value="$PROJECT_DIR$/src/components/auth/Login.js" />
       </list>
     </option>
   </component>
@@ -270,17 +262,18 @@
       <workItem from="1517959546314" duration="3805000" />
       <workItem from="1518727524214" duration="5893000" />
       <workItem from="1519396820583" duration="1881000" />
-      <workItem from="1519926399205" duration="6624000" />
+      <workItem from="1519926399205" duration="7322000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151686000" />
+    <option name="totallyTimeSpent" value="152384000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2560" height="1353" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15045294" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15045294" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -410,14 +403,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="825">
           <caret line="56" column="29" lean-forward="true" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/auth/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="19" column="6" lean-forward="false" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="65" />
           <folding />
         </state>
       </provider>
@@ -698,6 +683,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/auth/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="32" column="51" lean-forward="false" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
           <folding />
         </state>
       </provider>
