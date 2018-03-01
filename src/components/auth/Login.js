@@ -30,7 +30,7 @@ export default class FunLogin extends Component {
   };
 
   login = () => {
-    fetch('https://spring-clock.herokuapp.com/rest/login', {
+    fetch('https://spring-clock.herokuapp.com/login', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
