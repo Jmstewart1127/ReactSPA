@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { Grid, Icon, MenuItem, Button, Checkbox, Form } from 'semantic-ui-react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Login from "./Login";
-import Routing from "../nav/Router";
+import { Icon, MenuItem } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 export default class Logout extends Component {
   constructor(props) {
@@ -19,9 +17,6 @@ export default class Logout extends Component {
   }
 
   render() {
-    const logoutFunction = this.props;
-    const loginFunction = this.props;
-    const loggedIn = this.props;
     if (localStorage.getItem('id') !== 'undefined') {
       return(
         <MenuItem position="right" onClick={this.props.logoutFunction}>
