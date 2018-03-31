@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Sidebar, Segment, Button, Menu, MenuItem, Image, Icon, Header } from 'semantic-ui-react'
-import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
+import { Sidebar, Segment, Menu, Icon } from 'semantic-ui-react'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import SemanticTable from "./components/employee/SemanticTable";
 import Businesses from "./components/business/Businesses";
 import BusinessById from "./components/business/BusinessById";

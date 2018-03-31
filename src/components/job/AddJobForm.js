@@ -90,7 +90,7 @@ class AddJobForm extends Component {
           <Segment>
             <Form onSubmit={this.handleSubmit}>
               <Form.Field>
-                <label>Employee Name</label>
+                <label>Job Address</label>
                 <input
                   placeholder='Job Address'
                   value={this.state.jobAddress}
