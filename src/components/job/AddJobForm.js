@@ -6,6 +6,8 @@ class AddJobForm extends Component {
     super(props);
     this.state = {
       jobAddress: '',
+      latitude: '',
+      longitude: '',
       customerName: '',
       amountCharged: '',
       submitted: false,
@@ -39,9 +41,27 @@ class AddJobForm extends Component {
   };
 
   handleSubmit(event) {
-    this.addNewJob();
+    this.getLatitudeAndLongitude();
     this.toggleSubmit();
     event.preventDefault();
+  }
+  
+  getLatitudeAndLongitude = () => {
+    fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + this.state.jobAddress.split(" ")
+      + '&key=AIzaSyDlXAOpZfmgDvrk4G7MkD6NXxPf9yJeJo8')
+      .then((response) => response.json())
+      .then((responseJson) => {
+        let lat = responseJson.results["0"].geometry.location.lat;
+        let lng = responseJson.results["0"].geometry.location.lng;
+        this.setState({
+          latitude: lat,
+          longitude: lng
+        });
+      })
+      .then(() => this.addNewJob())
+      .catch((error) => {
+        console.error(error);
+      });
   }
 
   addNewJob = () => {
@@ -55,6 +75,8 @@ class AddJobForm extends Component {
       body: JSON.stringify({
         bizId: this.props.bizId,
         jobAddress: this.state.jobAddress,
+        latitude: this.state.latitude,
+        longitude: this.state.longitude,
         customerName: this.state.customerName,
         amountCharged: this.state.amountCharged,
       })
