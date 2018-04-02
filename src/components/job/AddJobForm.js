@@ -42,7 +42,6 @@ class AddJobForm extends Component {
 
   handleSubmit(event) {
     this.getLatitudeAndLongitude();
-    this.toggleSubmit();
     event.preventDefault();
   }
 
@@ -58,7 +57,9 @@ class AddJobForm extends Component {
           longitude: lng
         });
       })
+      .then(() => console.log('1'))
       .then(() => this.addNewJob())
+      .then(() => this.toggleSubmit())
       .catch((error) => {
         console.error(error);
       });
@@ -81,6 +82,8 @@ class AddJobForm extends Component {
         amountCharged: this.state.amountCharged,
       })
     })
+      .then(() => console.log(this.state.jobAddress))
+      .then(() => console.log('2'))
   };
 
   render() {

@@ -101,7 +101,7 @@ class BusinessById extends Component {
 
   render() {
     const reloadEmployees = () => { setTimeout(() => { this.setEmployeeData(); }, 400); };
-    const reloadJobs = () => { setTimeout(() => { this.setJobData(); }, 400); };
+    const reloadJobs = () => { setTimeout(() => { this.setJobData(); }, 700); };
     const toggleEmployeeVisibility = () => { this.toggleEmployeeVisibility() };
     const toggleJobVisibility = () => { this.toggleJobVisibility() };
     if (this.state.isLoading) {
