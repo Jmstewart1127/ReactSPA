@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect} from 'react-router-dom';
 import { Button, Form, Grid, Header, Icon, Segment } from 'semantic-ui-react'
 
 export default class NewUser extends Component {
@@ -8,8 +8,10 @@ export default class NewUser extends Component {
     this.state = {
       username: '',
       password: '',
+      email: '',
       passwordReType: '',
       loggedIn: false,
+      userCreated: false,
     }
   }
 
@@ -24,10 +26,12 @@ export default class NewUser extends Component {
         body: JSON.stringify({
           userName: this.state.username,
           password: this.state.password,
+          email: this.state.email,
           role: "admin",
           enabled: true
         })
       })
+      .then(() => this.setState({ userCreated: true }))
     }
   };
 
@@ -43,6 +47,11 @@ export default class NewUser extends Component {
   };
 
   render() {
+    if (this.state.userCreated === true) {
+      return(
+        <Redirect to={"/"} />
+      );
+    }
     return(
       <div className='loader'>
         <Grid container centered columns={3}>
@@ -65,6 +74,14 @@ export default class NewUser extends Component {
                     />
                   </Form.Field>
                   <Form.Field>
+                    <label>Email Address</label>
+                    <input
+                      placeholder='email'
+                      value={this.state.email}
+                      onChange={this.handleChange('email')}
+                    />
+                  </Form.Field>
+                  <Form.Field>
                     <label>Password</label>
                     <input
                       type='password'
@@ -82,9 +99,7 @@ export default class NewUser extends Component {
                       onChange={this.handleChange('passwordReType')}
                     />
                   </Form.Field>
-                  <Link to={'/'}>
-                    <Button type='submit'>Submit</Button>
-                  </Link>
+                  <Button type='submit'>Submit</Button>
                 </Form>
               </Segment>
             </Segment>

@@ -140,7 +140,7 @@ class JobById extends Component {
                     bizId={this.state.jobData.bizId}
                     jobId={this.state.jobId}
                     employeesOnJob={this.state.employeeData}
-                    reloadData={reloadEmployees()}
+                    reloadData={reloadEmployees}
                   />
                   {this.state.employeeData.map((employee) => {
                     return (
