@@ -7,6 +7,7 @@ import BusinessById from "./components/business/BusinessById";
 import EmployeeById from "./components/employee/EmployeeById";
 import EmployeesByBusiness from "./components/employee/EmployeesByBusiness";
 import JobById from "./components/job/JobById";
+import CreateAccount from "./components/auth/NewUser";
 import Login from "./components/auth/Login";
 import Logout from "./components/auth/Logout";
 
@@ -82,6 +83,7 @@ class App extends Component {
               <Segment basic>
                 <body>
                   <Route exact path="/" component={Login} loggedIn={this.state.loggedIn}/>
+                  <Route path="/Create/Account" component={CreateAccount}/>
                   <Route path="/Employees" component={SemanticTable}/>
                   <Route path="/Employee/:id" component={EmployeeById}/>
                   <Route path="/View/Employees/:id" component={EmployeesByBusiness}/>

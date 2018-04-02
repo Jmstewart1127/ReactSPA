@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Icon, MenuItem } from 'semantic-ui-react';
+import { Icon, Menu, MenuItem } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 export default class Logout extends Component {
@@ -19,7 +19,7 @@ export default class Logout extends Component {
   render() {
     if (localStorage.getItem('id') !== 'undefined') {
       return(
-        <MenuItem position="right" onClick={this.props.logoutFunction}>
+        <MenuItem position='right' onClick={this.props.logoutFunction}>
           <Link to="/">
             <Icon name='sign out' />Logout
           </Link>
@@ -27,11 +27,13 @@ export default class Logout extends Component {
       );
     } else {
       return(
-        <MenuItem position="right" onClick={this.props.loginFunction}>
-          <Link to="/">
-            <Icon name='sign in' />Login
-          </Link>
-        </MenuItem>
+        <div>
+          <MenuItem position='right' onClick={this.props.loginFunction}>
+            <Link to="/">
+              <Icon name='sign in' />Login
+            </Link>
+          </MenuItem>
+        </div>
       );
     }
   }

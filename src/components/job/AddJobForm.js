@@ -45,7 +45,7 @@ class AddJobForm extends Component {
     this.toggleSubmit();
     event.preventDefault();
   }
-  
+
   getLatitudeAndLongitude = () => {
     fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + this.state.jobAddress.split(" ")
       + '&key=AIzaSyDlXAOpZfmgDvrk4G7MkD6NXxPf9yJeJo8')

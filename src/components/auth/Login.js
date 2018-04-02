@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Grid, Button, Form } from 'semantic-ui-react'
+import { Link } from 'react-router-dom';
+import { Divider, Grid, Button, Form, Header, Icon, Segment } from 'semantic-ui-react'
 
 export default class FunLogin extends Component {
   constructor(props) {
@@ -70,26 +71,37 @@ export default class FunLogin extends Component {
         <div>
           <Grid container centered columns={3}>
             <Grid.Column>
-              <Form className='login-form' onSubmit={this.handleSubmit}>
-                <Form.Field>
-                  <label>Username</label>
-                  <input
-                    placeholder='Username'
-                    value={this.state.username}
-                    onChange={this.handleUserNameChange}
-                  />
-                </Form.Field>
-                <Form.Field>
-                  <label>Password</label>
-                  <input
-                    placeholder='Password'
-                    type="password"
-                    value={this.state.password}
-                    onChange={this.handlePassWordChange}
-                  />
-                </Form.Field>
-                <Button className='login-submit-button' type='submit'>Submit</Button>
-              </Form>
+              <Segment>
+                <Header as='h2' className='main-widget-header'>
+                  <Icon name='login' size='small'/>
+                  <Header.Content>
+                    {'Login'}
+                  </Header.Content>
+                </Header>
+                <Form className='login-form' onSubmit={this.handleSubmit}>
+                  <Form.Field>
+                    <label>Username</label>
+                    <input
+                      placeholder='Username'
+                      value={this.state.username}
+                      onChange={this.handleUserNameChange}
+                    />
+                  </Form.Field>
+                  <Form.Field>
+                    <label>Password</label>
+                    <input
+                      placeholder='Password'
+                      type="password"
+                      value={this.state.password}
+                      onChange={this.handlePassWordChange}
+                    />
+                  </Form.Field>
+                  <Link to={'/Create/Account'}>
+                    <Button>Create Account</Button>
+                  </Link>
+                  <Button type='submit'>Login</Button>
+                </Form>
+              </Segment>
             </Grid.Column>
           </Grid>
         </div>
