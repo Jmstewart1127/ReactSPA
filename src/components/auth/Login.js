@@ -5,7 +5,6 @@ import { Divider, Grid, Button, Form, Header, Icon, Segment } from 'semantic-ui-
 export default class FunLogin extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       userId: '',
       username: '',
@@ -66,7 +65,7 @@ export default class FunLogin extends Component {
   };
 
   render() {
-    if (localStorage.getItem('id') === 'undefined') {
+    if (this.props.loggedIn) {
       return(
         <div>
           <Grid container centered columns={3}>

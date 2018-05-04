@@ -10,14 +10,8 @@ export default class Logout extends Component {
     }
   }
 
-  componentWillReceiveProps(newProps) {
-    if (this.props.loggedIn !== newProps.loggedIn) {
-      this.setState({ loggedIn: true });
-    }
-  }
-
   render() {
-    if (localStorage.getItem('id') !== 'undefined') {
+    if (this.props.loggedIn) {
       return(
         <MenuItem position='right' onClick={this.props.logoutFunction}>
           <Link to="/">

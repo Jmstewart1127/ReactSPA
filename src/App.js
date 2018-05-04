@@ -21,6 +21,7 @@ class App extends Component {
 
   logout = () => {
     localStorage.setItem('id', 'undefined');
+    this.isLoggedIn();
   };
 
   login = () => {
@@ -42,9 +43,6 @@ class App extends Component {
 
   render() {
     const { visible } = this.state;
-    const handleLogout = () => { this.logout() };
-    const handleLogin = () => { this.login() };
-    const checkLoggedIn = this.state.loggedIn;
     return (
       <Router>
         <div className="main-content">
@@ -53,9 +51,9 @@ class App extends Component {
               <Icon name='list' />
             </Menu.Item>
             <Logout
-              logoutFunction={handleLogout}
-              loginFunction={handleLogin}
-              loggedIn={checkLoggedIn}
+              logoutFunction={this.logout}
+              loginFunction={this.login}
+              loggedIn={this.state.loggedIn}
             />
           </Menu>
           <Sidebar.Pushable as={Segment}>
