@@ -22,8 +22,10 @@ class JobById extends Component {
   toggleEmployeeVisibility = () => {
     if (this.state.addEmployeeVisibility) {
       this.setState({addEmployeeVisibility: false});
+      this.setEmployeeData();
     } else {
       this.setState({addEmployeeVisibility: true});
+      this.setEmployeeData();
     }
   };
 
@@ -56,6 +58,7 @@ class JobById extends Component {
           employeeData: responseJson,
           isLoading: false,
         });
+        console.log("aaa");
       })
       .catch((error) => {
         console.error(error);

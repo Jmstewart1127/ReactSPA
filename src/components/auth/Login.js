@@ -73,7 +73,7 @@ export default class FunLogin extends Component {
             <Grid.Column>
               <Segment>
                 <Header as='h2' className='main-widget-header'>
-                  <Icon name='login' size='small'/>
+                  <Icon name='user' size='small'/>
                   <Header.Content>
                     {'Login'}
                   </Header.Content>
@@ -96,10 +96,10 @@ export default class FunLogin extends Component {
                       onChange={this.handlePassWordChange}
                     />
                   </Form.Field>
+                  <Button type='submit'>Login</Button>
                   <Link to={'/Create/Account'}>
                     <Button>Create Account</Button>
                   </Link>
-                  <Button type='submit'>Login</Button>
                 </Form>
               </Segment>
             </Grid.Column>

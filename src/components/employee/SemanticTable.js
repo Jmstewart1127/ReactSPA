@@ -116,17 +116,7 @@ class SemanticTable extends Component {
               </Table.Body>
               <Table.Footer fullWidth>
                 <Table.Row>
-                  <Table.HeaderCell/>
-                  <Table.HeaderCell colSpan='5'>
-                    <Button
-                      floated='right'
-                      icon labelPosition='left'
-                      primary size='small'
-                      onClick={this.toggleVisibility}
-                    >
-                      <Icon name='user'/> Add User
-                    </Button>
-                  </Table.HeaderCell>
+                  <Table.HeaderCell colSpan='5'/>
                 </Table.Row>
               </Table.Footer>
             </Table>

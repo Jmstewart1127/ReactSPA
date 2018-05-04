@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Grid, Button, Loader, Checkbox, Icon, Table } from 'semantic-ui-react';
+import AddEmployeeForm from './AddEmployeeForm';
 import TimeClockSlider from '../misc/TimeClockSlider';
 
 class EmployeesByBusiness extends Component {
@@ -43,6 +44,14 @@ class EmployeesByBusiness extends Component {
       });
   };
 
+  clockStatusText = clockStatus => {
+    if (clockStatus === true) {
+      return "Clocked In";
+    } else {
+      return "Clocked Out";
+    }
+  };
+
   componentDidMount() {
     this.setEmployeeData();
   }
@@ -74,6 +83,9 @@ class EmployeesByBusiness extends Component {
                   const handleClockInOut = () => {
                     this.clockEmployeeInOrOut(employee.id);
                   };
+                  const clockStatusText = () => {
+                    return this.clockStatusText(employee.clocked);
+                  };
                   return (
                     <Table.Row key={employee.id}>
                       <Table.Cell collapsing>
@@ -86,7 +98,7 @@ class EmployeesByBusiness extends Component {
                       <Table.Cell>{employee.user}</Table.Cell>
                       <Table.Cell>{employee.payRate}</Table.Cell>
                       <Table.Cell>{Math.round(employee.totalPay * 100) / 100}</Table.Cell>
-                      <Table.Cell>{employee.clocked.toString()}</Table.Cell>
+                      <Table.Cell>{clockStatusText()}</Table.Cell>
                     </Table.Row>
                   );
                 })}
@@ -94,14 +106,22 @@ class EmployeesByBusiness extends Component {
               <Table.Footer fullWidth>
                 <Table.Row>
                   <Table.HeaderCell/>
-                  <Table.HeaderCell colSpan='4'>
-                    <Button floated='right' icon labelPosition='left' primary size='small'>
+                  <Table.HeaderCell colSpan='5'>
+                    <Button
+                      floated='right'
+                      icon labelPosition='left'
+                      primary size='small'
+                      onClick={this.toggleVisibility}
+                    >
                       <Icon name='user'/> Add User
                     </Button>
                   </Table.HeaderCell>
                 </Table.Row>
               </Table.Footer>
             </Table>
+            <AddEmployeeForm
+              visible={this.state.visible}
+            />
           </Grid.Column>
         </Grid>
       );
