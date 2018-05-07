@@ -2,11 +2,8 @@ import React, { Component } from 'react'
 import { Grid, Button, Form, Header, Icon, MenuItem, Segment, Sidebar, Menu } from 'semantic-ui-react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import SemanticTable from "./components/employee/SemanticTable";
-import Businesses from "./components/business/Businesses";
-import BusinessById from "./components/business/BusinessById";
-import EmployeeById from "./components/employee/EmployeeById";
-import EmployeesByBusiness from "./components/employee/EmployeesByBusiness";
+import { Businesses, BusinessById } from './components/business';
+import { EmployeesByBusiness, EmployeeById, SemanticTable } from './components/employee';
 import JobById from "./components/job/JobById";
 import CreateAccount from "./components/auth/NewUser";
 import Login from "./components/auth/Login";

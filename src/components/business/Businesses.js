@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
 import { Button, Form, Grid, Loader, Icon, Table } from 'semantic-ui-react';
-import NewBusinessForm from './AddBusinessForm';
-import BusinessHeader from './BusinessHeader';
+import { AddBusinessForm, BusinessHeader } from '../business';
 
 class Businesses extends Component {
   constructor(props) {
@@ -109,7 +108,7 @@ class Businesses extends Component {
                 </Table.Row>
               </Table.Footer>
             </Table>
-            <NewBusinessForm
+            <AddBusinessForm
               visible={this.state.visible}
               reloadData={reload}
             />

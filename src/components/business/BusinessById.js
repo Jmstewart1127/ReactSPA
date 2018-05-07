@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import AddEmployeeForm from '../employee/AddEmployeeForm';
 import EmployeeSegment from '../employee/EmployeeSegmentList';
 import JobSegment from '../job/JobSegmentList';
-import BusinessHeader from './BusinessHeader';
+import { BusinessHeader } from '../business';
 import EmployeesHeader from '../employee/EmployeeWidgetHeader';
 import JobsHeader from '../job/JobWidgetHeader';
 import AddJobForm from "../job/AddJobForm";

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Grid, Button, Loader, Checkbox, Icon, Table } from 'semantic-ui-react';
-import AddEmployeeForm from './AddEmployeeForm';
+import { AddEmployeeForm } from '../employee';
 import TimeClockSlider from '../misc/TimeClockSlider';
 
 class EmployeesByBusiness extends Component {

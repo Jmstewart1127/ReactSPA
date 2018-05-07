@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Grid, Button, Loader, Checkbox, Icon, Table } from 'semantic-ui-react';
-import EmployeeHeader from './EmployeeHeader';
-import AddEmployeeForm from './AddEmployeeForm';
+import { AddEmployeeForm, EmployeeHeader } from '../employee';
 import TimeClockSlider from '../misc/TimeClockSlider';
 
 class SemanticTable extends Component {

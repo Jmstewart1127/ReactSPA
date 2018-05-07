@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import { Button, Divider, Grid, Header, Loader, Icon, Segment } from 'semantic-ui-react';
-import AddEmployeeToJob from '../employee/AddEmployeeToJobForm';
 import DeleteJob from '../misc/DeleteJob';
-import EmployeeHeader from '../employee/EmployeeWidgetHeader';
-import EmployeeSegment from '../employee/EmployeeSegmentList';
-import BusinessSegment from '../business/BusinessSegmentList';
+import { BusinessSegmentList } from '../business';
+import { AddEmployeeToJobForm, EmployeeHeader, EmployeeSegmentList } from "../employee";
 
 class JobById extends Component {
   constructor(props) {
@@ -137,7 +135,7 @@ class JobById extends Component {
                   <EmployeeHeader
                     headerTitle={"Employees"}
                   />
-                  <AddEmployeeToJob
+                  <AddEmployeeToJobForm
                     onClick={reloadEmployees}
                     visible={this.state.addEmployeeVisibility}
                     bizId={this.state.jobData.bizId}
@@ -147,7 +145,7 @@ class JobById extends Component {
                   />
                   {this.state.employeeData.map((employee) => {
                     return (
-                      <EmployeeSegment
+                      <EmployeeSegmentList
                         key={employee.id}
                         id={employee.id}
                         employeeName={employee.user}
@@ -162,7 +160,7 @@ class JobById extends Component {
                       Business
                     </Header.Content>
                   </Header>
-                  <BusinessSegment
+                  <BusinessSegmentList
                     id={this.state.businessData.id}
                     bizName={this.state.businessData.bizName}
                   />

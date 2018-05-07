@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Divider, Grid, Header, Loader, Icon,  Segment } from 'semantic-ui-react';
-import EditEmployee from './EditEmployeeForm';
-import BusinessSegment from '../business/BusinessSegmentList';
+import { EditEmployeeForm } from '../employee';
+import { BusinessSegmentList } from '../business';
 import DeleteUser from '../misc/DeleteUser';
 import JobSegment from '../job/JobSegmentList';
 
@@ -130,7 +130,7 @@ class BusinessById extends Component {
                     <Divider hidden/>
                     Pay For This Period: ${totalPay}
                   </Segment>
-                  <EditEmployee
+                  <EditEmployeeForm
                     id={this.state.employeeData.id}
                     bizId={this.state.employeeData.bizId}
                     totalPay={totalPay}
@@ -148,7 +148,7 @@ class BusinessById extends Component {
                       Employed At
                     </Header.Content>
                   </Header>
-                  <BusinessSegment
+                  <BusinessSegmentList
                     id={this.state.businessData.id}
                     bizName={this.state.businessData.bizName}
                   />
