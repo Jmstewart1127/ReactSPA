@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Divider, Grid, Button, Form, Header, Icon, Segment } from 'semantic-ui-react'
+import { Grid, Button, Form, Header, Icon, Segment } from 'semantic-ui-react'
 
 export default class FunLogin extends Component {
   constructor(props) {
@@ -65,7 +65,7 @@ export default class FunLogin extends Component {
   };
 
   render() {
-    if (this.props.loggedIn) {
+    if (localStorage.getItem('id') === 'undefined') {
       return(
         <div>
           <Grid container centered columns={3}>
