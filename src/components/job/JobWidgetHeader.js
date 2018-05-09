@@ -8,7 +8,7 @@ class JobWidgetHeader extends Component {
 
   render() {
     return(
-      <Header as='h2' className='job-widget'>
+      <Header as='h2' className='employee-widget'>
         <Icon name='cubes' size='small'/>
         <Header.Content>
           {this.props.headerTitle}

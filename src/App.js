@@ -4,10 +4,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { Businesses, BusinessById } from './components/business';
 import { EmployeesByBusiness, EmployeeById, SemanticTable } from './components/employee';
-import JobById from "./components/job/JobById";
-import CreateAccount from "./components/auth/NewUser";
-import Login from "./components/auth/Login";
-import Logout from "./components/auth/Logout";
+import { JobById, JobTable } from './components/job';
+import { CreateAccount, Login, Logout } from './components/auth';
 
 class App extends Component {
   state = {

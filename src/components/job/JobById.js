@@ -116,7 +116,7 @@ class JobById extends Component {
                       onClick={this.toggleEditEmployeeVisibility}
                     />
                   </Button.Group>
-                  <Header as='h2' className='main-widget-header'>
+                  <Header as='h2' className='main-widget-header-with-button'>
                     <Icon name='cubes' size='small'/>
                     <Header.Content>
                       {this.state.jobData.jobAddress}
