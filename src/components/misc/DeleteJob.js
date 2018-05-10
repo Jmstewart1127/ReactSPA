@@ -29,8 +29,9 @@ class DeleteJob extends Component {
       <div>
         <Button
           onClick={this.show('mini')}
-          className='single-button'
-          icon='remove' floated='right'
+          className='inner-button'
+          icon='remove'
+          floated='right'
           size='large'
         />
         <Modal size={size} open={open} onClose={this.close}>

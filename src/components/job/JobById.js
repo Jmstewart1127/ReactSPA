@@ -14,6 +14,7 @@ class JobById extends Component {
       employeeData: [],
       jobData: [],
       addEmployeeVisibility: false,
+      addMaterialVisibility: false,
       isLoading: true,
     }
   }
@@ -24,6 +25,16 @@ class JobById extends Component {
       this.setEmployeeData();
     } else {
       this.setState({addEmployeeVisibility: true});
+      this.setEmployeeData();
+    }
+  };
+
+  toggleMaterialVisibility = () => {
+    if (this.state.addMaterialVisibility) {
+      this.setState({addMaterialVisibility: false});
+      this.setEmployeeData();
+    } else {
+      this.setState({addMaterialVisibility: true});
       this.setEmployeeData();
     }
   };
@@ -114,6 +125,13 @@ class JobById extends Component {
                       size='large'
                       onClick={this.toggleEditEmployeeVisibility}
                     />
+                    <Button
+                      className='single-button'
+                      icon='plus cart'
+                      floated='right'
+                      size='large'
+                      onClick={this.toggleMaterialVisibility}
+                    />
                   </Button.Group>
                   <Header as='h2' className='main-widget-header-with-button'>
                     <Icon name='cubes' size='small'/>
@@ -126,9 +144,8 @@ class JobById extends Component {
                     <Divider hidden/>
                     Total Material Cost: {this.state.employeeData.weeklyPay}
                   </Segment>
-                  <AddMaterials visible={true}/>
                 </Segment.Group>
-                <AddMaterials visibile={true}/>
+                <AddMaterials visible={this.state.addMaterialVisibility}/>
               </Grid.Column>
               <Grid.Column floated='right' width={5}>
                 <Segment.Group className='widget'>
