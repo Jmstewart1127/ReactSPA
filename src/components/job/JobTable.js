@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import { Button, Grid, Loader, Icon, Table } from 'semantic-ui-react';
-import { BusinessHeader } from '../business';
+import { JobHeader } from '../job';
 
 class JobTable extends Component {
   constructor(props) {
@@ -60,14 +60,14 @@ class JobTable extends Component {
       return (
         <Grid container columns={1}>
           <Grid.Column>
-            <BusinessHeader
-              headerTitle={"Businesses"}
+            <JobHeader
+              headerTitle={'Jobs'}
             />
             <Table celled>
               <Table.Header>
                 <Table.Row>
-                  <Table.HeaderCell></Table.HeaderCell>
-                  <Table.HeaderCell>Business Name</Table.HeaderCell>
+                  <Table.HeaderCell/>
+                  <Table.HeaderCell>Job Address</Table.HeaderCell>
                 </Table.Row>
               </Table.Header>
               <Table.Body>
@@ -95,14 +95,7 @@ class JobTable extends Component {
                 <Table.Row>
                   <Table.HeaderCell/>
                   <Table.HeaderCell colSpan='4'>
-                    <Button
-                      floated='right'
-                      icon labelPosition='left'
-                      primary size='small'
-                      onClick={this.toggleVisibility}
-                    >
-                      <Icon name='university'/> Add Business
-                    </Button>
+                    <Icon name='cubes' className={'table-icon'}/>
                   </Table.HeaderCell>
                 </Table.Row>
               </Table.Footer>

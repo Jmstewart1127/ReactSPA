@@ -115,7 +115,10 @@ class SemanticTable extends Component {
               </Table.Body>
               <Table.Footer fullWidth>
                 <Table.Row>
-                  <Table.HeaderCell colSpan='5'/>
+                  <Table.HeaderCell/>
+                  <Table.HeaderCell colSpan='5'>
+                    <Icon name='user' className={'table-icon'}/>
+                  </Table.HeaderCell>
                 </Table.Row>
               </Table.Footer>
             </Table>

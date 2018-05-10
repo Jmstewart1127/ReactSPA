@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
-import { Button, Form, Grid, Loader, Icon, Table } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import { Button, Grid, Loader, Icon, Table } from 'semantic-ui-react';
 import { AddBusinessForm, BusinessHeader } from '../business';
 
 class Businesses extends Component {
@@ -67,7 +67,7 @@ class Businesses extends Component {
             <Table celled>
               <Table.Header>
                 <Table.Row>
-                  <Table.HeaderCell></Table.HeaderCell>
+                  <Table.HeaderCell/>
                   <Table.HeaderCell>Business Name</Table.HeaderCell>
                 </Table.Row>
               </Table.Header>

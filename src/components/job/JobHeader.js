@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import { Header, Icon} from 'semantic-ui-react';
 
-class EmployeeHeader extends Component {
+class JobHeader extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
     return(
-      <Header as='h2' className='employee-widget'>
-        <Icon name='users' size='small'/>
+      <Header as='h2' className='main-widget-header'>
+        <Icon name='cubes' size='small'/>
         <Header.Content>
           {this.props.headerTitle}
         </Header.Content>
@@ -18,4 +18,4 @@ class EmployeeHeader extends Component {
   }
 }
 
-export default EmployeeHeader
+export default JobHeader

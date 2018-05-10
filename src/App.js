@@ -184,6 +184,12 @@ class App extends Component {
                     Employees
                   </Link>
                 </Menu.Item>
+                <Menu.Item name='cubes'>
+                  <Link to="/Jobs">
+                    <Icon name='cubes'/>
+                    Jobs
+                  </Link>
+                </Menu.Item>
               </Sidebar>
               <Sidebar.Pusher>
                 <Segment basic>
@@ -195,6 +201,7 @@ class App extends Component {
                     <Route path="/View/Employees/:id" component={EmployeesByBusiness}/>
                     <Route path="/Businesses" component={Businesses}/>
                     <Route path="/Business/:id" component={BusinessById}/>
+                    <Route path="/Jobs" component={JobTable}/>
                     <Route path="/Job/:id" component={JobById}/>
                   </body>
                 </Segment>
