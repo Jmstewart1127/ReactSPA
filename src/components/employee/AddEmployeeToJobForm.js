@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Button, Form, Segment} from 'semantic-ui-react';
-import AddToJobCheckBox from '../misc/AddEmployeeToJobCheckBox';
+import { Segment} from 'semantic-ui-react';
+import { AddToJobCheckBox } from '../misc';
 
 class AddEmployeeForm extends Component {
   constructor(props) {

@@ -1,15 +1,17 @@
 import React, { Component } from 'react'
 import { Button, Form, Segment} from 'semantic-ui-react';
 
-class AddJobForm extends Component {
+class AddMaterials extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      jobAddress: '',
-      latitude: '',
-      longitude: '',
-      customerName: '',
-      amountCharged: '',
+      jobId: '',
+      purchasedFrom: '',
+      poNumber: '',
+      partName: '',
+      quantity: 0,
+      price: 0,
+      totalPrice: this.quantity * this.price,
       submitted: false,
     };
     this.handleChange = this.handleChange.bind(this);
@@ -20,16 +22,22 @@ class AddJobForm extends Component {
     if (this.state.submitted) {
       this.setState({
         submitted: false,
-        jobAddress: '',
-        customerName: '',
-        amountCharged: '',
+        jobId: '',
+        purchasedFrom: '',
+        poNumber: '',
+        partName: '',
+        quantity: 0,
+        price: 0,
       });
     } else {
       this.setState({
         submitted: true,
-        jobAddress: '',
-        customerName: '',
-        amountCharged: '',
+        jobId: '',
+        purchasedFrom: '',
+        poNumber: '',
+        partName: '',
+        quantity: 0,
+        price: 0,
       });
     }
   };
@@ -41,30 +49,11 @@ class AddJobForm extends Component {
   };
 
   handleSubmit(event) {
-    this.getLatitudeAndLongitude();
+    this.addNewMaterial();
     event.preventDefault();
   }
 
-  getLatitudeAndLongitude = () => {
-    fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + this.state.jobAddress.split(" ")
-      + '&key=AIzaSyDlXAOpZfmgDvrk4G7MkD6NXxPf9yJeJo8')
-      .then((response) => response.json())
-      .then((responseJson) => {
-        let lat = responseJson.results["0"].geometry.location.lat;
-        let lng = responseJson.results["0"].geometry.location.lng;
-        this.setState({
-          latitude: lat,
-          longitude: lng
-        });
-      })
-      .then(() => this.addNewJob())
-      .then(() => this.toggleSubmit())
-      .catch((error) => {
-        console.error(error);
-      });
-  };
-
-  addNewJob = () => {
+  addNewMaterial = () => {
     fetch('https://spring-clock.herokuapp.com/rest/job/add', {
       method: 'POST',
       headers: {
@@ -73,16 +62,16 @@ class AddJobForm extends Component {
         'Authorization': sessionStorage.getItem('jwt')
       },
       body: JSON.stringify({
-        bizId: this.props.bizId,
-        jobAddress: this.state.jobAddress,
-        latitude: this.state.latitude,
-        longitude: this.state.longitude,
-        customerName: this.state.customerName,
-        amountCharged: this.state.amountCharged,
+        jobId: this.props.jobId,
+        purchasedFrom: this.state.purchasedFrom,
+        poNumber: this.state.poNumber,
+        partName: this.state.partName,
+        quantity: this.state.quantity,
+        price: this.state.price,
+        totalPrice: this.state.totalPrice,
       })
     })
-      .then(() => console.log(this.state.jobAddress))
-      .then(() => console.log('2'))
+      .then(() => console.log(this.state.totalPrice))
   };
 
   render() {
@@ -128,4 +117,4 @@ class AddJobForm extends Component {
   }
 }
 
-export default AddJobForm
+export default AddMaterials

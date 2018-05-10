@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { Button, Divider, Grid, Header, Loader, Icon, Segment } from 'semantic-ui-react';
-import DeleteJob from '../misc/DeleteJob';
+import { DeleteJob } from '../misc';
 import { BusinessSegmentList } from '../business';
-import { AddEmployeeToJobForm, EmployeeHeader, EmployeeSegmentList } from "../employee";
+import { AddEmployeeToJobForm, EmployeeHeader, EmployeeSegmentList } from '../employee';
+import { AddMaterials } from '../material';
 
 class JobById extends Component {
   constructor(props) {
@@ -38,7 +39,6 @@ class JobById extends Component {
           businessData: responseJson,
           isLoading: false,
         });
-        console.log(this.state.businessData);
       })
       .catch((error) => {
         console.error(error);
@@ -56,7 +56,6 @@ class JobById extends Component {
           employeeData: responseJson,
           isLoading: false,
         });
-        console.log("aaa");
       })
       .catch((error) => {
         console.error(error);
@@ -127,7 +126,9 @@ class JobById extends Component {
                     <Divider hidden/>
                     Total Material Cost: {this.state.employeeData.weeklyPay}
                   </Segment>
+                  <AddMaterials visible={true}/>
                 </Segment.Group>
+                <AddMaterials visibile={true}/>
               </Grid.Column>
               <Grid.Column floated='right' width={5}>
                 <Segment.Group className='widget'>
