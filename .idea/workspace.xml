@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="15c76d52-e3fa-4992-bd87-804e95bff18d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/components/job/JobById.js" afterPath="$PROJECT_DIR$/src/components/job/JobById.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/misc/DeleteJob.js" afterPath="$PROJECT_DIR$/src/components/misc/DeleteJob.js" />
+      <change beforePath="$PROJECT_DIR$/src/components/material/AddMaterials.js" afterPath="$PROJECT_DIR$/src/components/material/AddMaterials.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="JobById.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="JobById.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/job/JobById.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="656">
-              <caret line="115" column="30" lean-forward="false" selection-start-line="115" selection-start-column="21" selection-end-line="115" selection-end-column="30" />
+            <state relative-caret-position="693">
+              <caret line="80" column="42" lean-forward="true" selection-start-line="80" selection-start-column="42" selection-end-line="80" selection-end-column="42" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -29,7 +29,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DeleteJob.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DeleteJob.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/misc/DeleteJob.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="369">
@@ -44,8 +44,8 @@
       <file leaf-file-name="SemanticTable.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/employee/SemanticTable.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="479">
+              <caret line="109" column="35" lean-forward="true" selection-start-line="109" selection-start-column="35" selection-end-line="109" selection-end-column="76" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -78,11 +78,21 @@
       <file leaf-file-name="AddMaterials.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/material/AddMaterials.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="103" column="0" lean-forward="true" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+            <state relative-caret-position="-12">
+              <caret line="18" column="3" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddEmployeeForm.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/employee/AddEmployeeForm.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-21">
+              <caret line="16" column="14" lean-forward="false" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="14" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -186,10 +196,10 @@
         <option value="$PROJECT_DIR$/src/components/employee/AddEmployeeToJobForm.js" />
         <option value="$PROJECT_DIR$/src/components/job/AddJobForm.js" />
         <option value="$PROJECT_DIR$/src/components/material/index.js" />
-        <option value="$PROJECT_DIR$/src/components/material/AddMaterials.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/src/components/job/JobById.js" />
         <option value="$PROJECT_DIR$/src/components/misc/DeleteJob.js" />
+        <option value="$PROJECT_DIR$/src/components/material/AddMaterials.js" />
+        <option value="$PROJECT_DIR$/src/components/job/JobById.js" />
       </list>
     </option>
   </component>
@@ -372,12 +382,12 @@
       <workItem from="1522639647984" duration="9894000" />
       <workItem from="1523550880877" duration="24000" />
       <workItem from="1525303273937" duration="17078000" />
-      <workItem from="1525888231829" duration="8222000" />
+      <workItem from="1525888231829" duration="10034000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="196949000" />
+    <option name="totallyTimeSpent" value="198761000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="23" width="1920" height="1057" extended-state="6" />
@@ -551,16 +561,6 @@
           <caret line="0" column="7" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/employee/AddEmployeeForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="7" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#40#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -784,26 +784,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/employee/SemanticTable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/material/AddMaterials.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="103" column="0" lean-forward="true" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -843,20 +823,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/job/JobById.js">
+    <entry file="file://$PROJECT_DIR$/src/components/misc/DeleteJob.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
-          <caret line="115" column="30" lean-forward="false" selection-start-line="115" selection-start-column="21" selection-end-line="115" selection-end-column="30" />
+        <state relative-caret-position="369">
+          <caret line="31" column="26" lean-forward="false" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/misc/DeleteJob.js">
+    <entry file="file://$PROJECT_DIR$/src/components/employee/AddEmployeeForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="31" column="26" lean-forward="false" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+        <state relative-caret-position="-21">
+          <caret line="16" column="14" lean-forward="false" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/material/AddMaterials.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12">
+          <caret line="18" column="3" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/employee/SemanticTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="109" column="35" lean-forward="true" selection-start-line="109" selection-start-column="35" selection-end-line="109" selection-end-column="76" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/job/JobById.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="80" column="42" lean-forward="true" selection-start-line="80" selection-start-column="42" selection-end-line="80" selection-end-column="42" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>

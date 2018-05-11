@@ -140,12 +140,15 @@ class JobById extends Component {
                     </Header.Content>
                   </Header>
                   <Segment>
-                    Total Labor Cost: {this.state.employeeData.payRate}
+                    Total Labor Cost: {this.state.jobData.laborCost}
                     <Divider hidden/>
-                    Total Material Cost: {this.state.employeeData.weeklyPay}
+                    Total Material Cost: {this.state.jobData.materialCost}
                   </Segment>
                 </Segment.Group>
-                <AddMaterials visible={this.state.addMaterialVisibility}/>
+                <AddMaterials
+                  visible={this.state.addMaterialVisibility}
+                  jobId={this.state.jobId}
+                />
               </Grid.Column>
               <Grid.Column floated='right' width={5}>
                 <Segment.Group className='widget'>
