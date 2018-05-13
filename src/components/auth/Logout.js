@@ -11,7 +11,7 @@ export default class Logout extends Component {
   }
 
   render() {
-    if (localStorage.getItem('id')) {
+    if (localStorage.getItem('id') !== 'undefined') {
       return(
         <MenuItem position='right' onClick={this.props.logoutFunction}>
           <Link to="/">
