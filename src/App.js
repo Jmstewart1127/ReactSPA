@@ -93,7 +93,7 @@ class App extends Component {
 
   render() {
     const {visible} = this.state;
-    if (localStorage.getItem('id') === 'undefined' || localStorage.getItem('id') === '') {
+    if (localStorage.getItem('id') === 'undefined' || localStorage.getItem('id') === null) {
       return (
         <Router>
           <div>
