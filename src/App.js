@@ -34,20 +34,40 @@ class App extends Component {
     }
   };
 
+  // getUserId = () => {
+  //   let username = this.state.username;
+  //   let password = this.state.password;
+  //   fetch('https://spring-clock.herokuapp.com/rest/login/' + username + '/' + password, {
+  //     headers: {'Authorization': sessionStorage.getItem('jwt')}
+  //   })
+  //     .then((response) => response.json())
+  //     .then((responseJson) => {
+  //       localStorage.setItem('id', responseJson.id);
+  //       this.setState({loggedIn: true});
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  // };
+
   getUserId = () => {
-    let username = this.state.username;
-    let password = this.state.password;
-    fetch('https://spring-clock.herokuapp.com/rest/login/' + username + '/' + password, {
-      headers: {'Authorization': sessionStorage.getItem('jwt')}
+    fetch('https://spring-clock.herokuapp.com/rest/material/add', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': sessionStorage.getItem('jwt')
+        },
+        body: JSON.stringify({
+            userName: this.state.username,
+            password: this.state.password,
+        })
     })
-      .then((response) => response.json())
-      .then((responseJson) => {
-        localStorage.setItem('id', responseJson.id);
-        this.setState({loggedIn: true});
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+        .then((response) => response.json())
+        .then((responseJson) => {
+            localStorage.setItem('id', responseJson["0"].id);
+            this.setState({loggedIn: true});
+        })
   };
 
   login = () => {
