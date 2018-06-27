@@ -51,7 +51,7 @@ class App extends Component {
   // };
 
   getUserId = () => {
-    fetch('https://spring-clock.herokuapp.com/rest/material/add', {
+    fetch('https://spring-clock.herokuapp.com/rest/login/', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
