@@ -65,7 +65,7 @@ class App extends Component {
     })
         .then((response) => response.json())
         .then((responseJson) => {
-            localStorage.setItem('id', responseJson["0"].id);
+            localStorage.setItem('id', responseJson.id);
             this.setState({loggedIn: true});
         })
   };
