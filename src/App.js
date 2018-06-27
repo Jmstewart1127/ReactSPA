@@ -88,11 +88,12 @@ class App extends Component {
   componentDidMount() {
     this.isLoggedIn();
     console.log(this.state.loggedIn);
+    console.log(localStorage.getItem('id'));
   }
 
   render() {
     const {visible} = this.state;
-    if (localStorage.getItem('id') === 'undefined') {
+    if (localStorage.getItem('id') === 'undefined' || localStorage.getItem('id') === '') {
       return (
         <Router>
           <div>
