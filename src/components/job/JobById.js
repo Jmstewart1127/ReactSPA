@@ -140,9 +140,9 @@ class JobById extends Component {
                     </Header.Content>
                   </Header>
                   <Segment>
-                    Total Labor Cost: {this.state.jobData.laborCost}
+                    Total Labor Cost: {Math.round(this.state.jobData.laborCost * 100) / 100}
                     <Divider hidden/>
-                    Total Material Cost: {this.state.jobData.materialCost}
+                    Total Material Cost: {Math.round(this.state.jobData.materialCost * 100) / 100}
                   </Segment>
                 </Segment.Group>
                 <AddMaterials

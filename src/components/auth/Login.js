@@ -65,7 +65,7 @@ export default class FunLogin extends Component {
   };
 
   render() {
-    if (localStorage.getItem('id') === 'undefined') {
+    if (localStorage.getItem('id') === 'undefined' || localStorage.getItem('id') === null) {
       return(
         <div>
           <Grid container centered columns={3}>

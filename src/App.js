@@ -34,22 +34,6 @@ class App extends Component {
     }
   };
 
-  // getUserId = () => {
-  //   let username = this.state.username;
-  //   let password = this.state.password;
-  //   fetch('https://spring-clock.herokuapp.com/rest/login/' + username + '/' + password, {
-  //     headers: {'Authorization': sessionStorage.getItem('jwt')}
-  //   })
-  //     .then((response) => response.json())
-  //     .then((responseJson) => {
-  //       localStorage.setItem('id', responseJson.id);
-  //       this.setState({loggedIn: true});
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // };
-
   getUserId = () => {
     fetch('https://spring-clock.herokuapp.com/rest/login/', {
         method: 'POST',
